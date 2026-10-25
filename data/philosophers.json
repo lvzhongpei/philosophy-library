@@ -11,56 +11,64 @@
       "name": "先秦",
       "en": "PRE-QIN",
       "span": "前 6 — 前 3 世纪",
-      "x": 9,
-      "y": 16
+      "x": 8,
+      "y": 14
     },
     {
       "id": "warring",
       "name": "战国儒家",
       "en": "CONFUCIAN",
       "span": "前 4 — 前 3 世纪",
-      "x": 24,
-      "y": 16
+      "x": 21,
+      "y": 12
+    },
+    {
+      "id": "legalist",
+      "name": "法家",
+      "en": "LEGALISM",
+      "span": "前 3 世纪",
+      "x": 29,
+      "y": 12
     },
     {
       "id": "greek",
       "name": "古希腊",
       "en": "CLASSICAL GREECE",
       "span": "前 5 — 前 4 世纪",
-      "x": 37,
-      "y": 12
+      "x": 38,
+      "y": 10
     },
     {
       "id": "chan",
       "name": "唐代禅宗",
       "en": "CHAN",
       "span": "7 — 8 世纪",
-      "x": 50,
-      "y": 16
+      "x": 47,
+      "y": 12
     },
     {
       "id": "medieval",
       "name": "中世纪",
       "en": "MEDIEVAL",
       "span": "4 — 13 世纪",
-      "x": 58,
-      "y": 12
+      "x": 54,
+      "y": 10
     },
     {
       "id": "ming",
       "name": "明代心学",
       "en": "MING",
       "span": "15 — 16 世纪",
-      "x": 66,
-      "y": 16
+      "x": 62,
+      "y": 12
     },
     {
       "id": "early",
       "name": "近代",
       "en": "EARLY MODERN",
       "span": "17 — 18 世纪",
-      "x": 78,
-      "y": 12
+      "x": 76,
+      "y": 10
     },
     {
       "id": "modern",
@@ -68,7 +76,15 @@
       "en": "MODERN",
       "span": "19 — 20 世纪",
       "x": 93,
-      "y": 12
+      "y": 10
+    },
+    {
+      "id": "analytic",
+      "name": "分析哲学",
+      "en": "ANALYTIC",
+      "span": "20 世纪",
+      "x": 96,
+      "y": 30
     }
   ],
   "links": [
@@ -83,6 +99,12 @@
       "b": "xunzi",
       "label": "性善 ↔ 性恶",
       "style": "dashed"
+    },
+    {
+      "a": "xunzi",
+      "b": "hanfei",
+      "label": "师承与背离",
+      "style": "solid"
     },
     {
       "a": "xunzi",
@@ -185,6 +207,12 @@
       "b": "camus",
       "label": "同一片战后废墟",
       "style": "dashed"
+    },
+    {
+      "a": "heidegger",
+      "b": "wittgenstein",
+      "label": "同一时代的两条路",
+      "style": "dashed"
     }
   ],
   "concepts": [
@@ -205,7 +233,8 @@
         "four_causes",
         "substance",
         "twocities",
-        "substance1"
+        "substance1",
+        "family"
       ]
     },
     {
@@ -412,7 +441,8 @@
         "virtue_knowledge",
         "imperative",
         "xingshan",
-        "jianxing"
+        "jianxing",
+        "no_trust"
       ]
     },
     {
@@ -746,7 +776,8 @@
         "wuwei",
         "youwu",
         "fan",
-        "qiwu"
+        "qiwu",
+        "unsayable"
       ]
     },
     {
@@ -830,7 +861,9 @@
       "desc": "先把词与实的对应摆正，否则一切以名发出的命令都是假的。",
       "links": [
         "li",
-        "zhongyong"
+        "zhongyong",
+        "bild",
+        "meaning_use"
       ]
     },
     {
@@ -1049,7 +1082,8 @@
         "phenomena",
         "tianren",
         "faith_reason",
-        "causal_habit"
+        "causal_habit",
+        "shiyi"
       ]
     },
     {
@@ -1149,7 +1183,8 @@
         "xingshan",
         "weizhuang",
         "li",
-        "lijie"
+        "lijie",
+        "no_trust"
       ]
     },
     {
@@ -1160,7 +1195,8 @@
       "desc": "枸木待檗括而直，钝金待砻厉而利。善是人为。",
       "links": [
         "evil_nature",
-        "shishang"
+        "shishang",
+        "shiyi"
       ]
     },
     {
@@ -1182,7 +1218,8 @@
       "desc": "不主张灭欲，只主张「近尽」与「节」。",
       "links": [
         "evil_nature",
-        "will"
+        "will",
+        "fa"
       ]
     },
     {
@@ -1309,7 +1346,8 @@
       "links": [
         "imperative",
         "zhongyong",
-        "is_ought"
+        "is_ought",
+        "fa"
       ]
     },
     {
@@ -1464,6 +1502,124 @@
         "recurrence",
         "absurd"
       ]
+    },
+    {
+      "id": "fa",
+      "name": "法",
+      "en": "法",
+      "phi": "hanfei",
+      "desc": "成文、公开、不因人而异。判断标准从身份挪到条文。",
+      "links": [
+        "shu_legal",
+        "shi",
+        "natural_law",
+        "lijie",
+        "no_trust"
+      ]
+    },
+    {
+      "id": "shu_legal",
+      "name": "术",
+      "en": "術",
+      "phi": "hanfei",
+      "desc": "藏在君主心里、用来识人的方法：循名责实。",
+      "links": [
+        "fa",
+        "shi",
+        "pity",
+        "ren"
+      ]
+    },
+    {
+      "id": "shi",
+      "name": "势",
+      "en": "勢",
+      "phi": "hanfei",
+      "desc": "位置本身带来的力量。云雾一散，龙蛇同于蚯蚓。",
+      "links": [
+        "fa",
+        "shu_legal"
+      ]
+    },
+    {
+      "id": "no_trust",
+      "name": "不恃人善",
+      "en": "不恃人為吾善",
+      "phi": "hanfei",
+      "desc": "不要指望人好，要让他不能作恶。",
+      "links": [
+        "evil_nature",
+        "fa",
+        "liangzhi"
+      ]
+    },
+    {
+      "id": "shiyi",
+      "name": "世异事异",
+      "en": "世異則事異",
+      "phi": "hanfei",
+      "desc": "把偶然当规律、把旧经验当常理，是政治思维的通病。",
+      "links": [
+        "weizhuang",
+        "categories"
+      ]
+    },
+    {
+      "id": "bild",
+      "name": "图像论",
+      "en": "Bildtheorie",
+      "phi": "wittgenstein",
+      "desc": "命题是事实的图像：要素对应对象，结构对应事态。",
+      "links": [
+        "unsayable",
+        "meaning_use",
+        "zhengming"
+      ]
+    },
+    {
+      "id": "unsayable",
+      "name": "不可说",
+      "en": "Unsagbares",
+      "phi": "wittgenstein",
+      "desc": "伦理、美学、生命意义不可言说——不是假的，是没法说。",
+      "links": [
+        "bild",
+        "dao"
+      ]
+    },
+    {
+      "id": "langgame",
+      "name": "语言游戏",
+      "en": "Sprachspiel",
+      "phi": "wittgenstein",
+      "desc": "命令、报告、演戏、唱歌，都是游戏。意义来自用法。",
+      "links": [
+        "meaning_use",
+        "family"
+      ]
+    },
+    {
+      "id": "family",
+      "name": "家族相似",
+      "en": "Familienähnlichkeit",
+      "phi": "wittgenstein",
+      "desc": "没有共同本质，只有两两相邻、交错重叠的相似。",
+      "links": [
+        "langgame",
+        "eidos"
+      ]
+    },
+    {
+      "id": "meaning_use",
+      "name": "意义即用法",
+      "en": "Gebrauch",
+      "phi": "wittgenstein",
+      "desc": "不要问它是什么意思，要问它是怎么用的。",
+      "links": [
+        "langgame",
+        "zhengming",
+        "bild"
+      ]
     }
   ],
   "philosophers": [
@@ -1478,7 +1634,7 @@
       "school": "道家",
       "schoolEn": "Daoism",
       "cluster": "preqin",
-      "x": 6,
+      "x": 5,
       "y": 58,
       "color": "#e0a458",
       "oneLine": "道可道，非常道。",
@@ -1632,8 +1788,8 @@
       "school": "儒家",
       "schoolEn": "Confucianism",
       "cluster": "preqin",
-      "x": 11,
-      "y": 34,
+      "x": 9,
+      "y": 32,
       "color": "#e0a458",
       "oneLine": "己所不欲，勿施于人。",
       "device": "confucius-circle",
@@ -1790,8 +1946,8 @@
       "school": "辩证法 · 伦理转向",
       "schoolEn": "Socratic Method",
       "cluster": "greek",
-      "x": 32,
-      "y": 30,
+      "x": 34,
+      "y": 20,
       "color": "#4fd1c5",
       "oneLine": "未经省察的人生不值得过。",
       "worksNote": "苏格拉底本人不著一字。下面这些都不是他的作品，而是别人写的他——其中柏拉图的记述最有文学性，也最难分辨哪一句属于苏格拉底、哪一句属于柏拉图本人。",
@@ -1951,8 +2107,8 @@
       "school": "理念论",
       "schoolEn": "Platonism",
       "cluster": "greek",
-      "x": 37,
-      "y": 56,
+      "x": 38,
+      "y": 50,
       "color": "#4fd1c5",
       "oneLine": "我们所见的，只是火光投在墙上的影子。",
       "device": "plato-cave",
@@ -2280,8 +2436,8 @@
       "school": "儒家 · 性善论",
       "schoolEn": "Confucianism",
       "cluster": "warring",
-      "x": 21,
-      "y": 40,
+      "x": 19,
+      "y": 38,
       "color": "#e0a458",
       "oneLine": "人皆有不忍人之心。",
       "device": "mengzi-sprouts",
@@ -2433,8 +2589,8 @@
       "school": "道家",
       "schoolEn": "Daoism",
       "cluster": "preqin",
-      "x": 16,
-      "y": 66,
+      "x": 14,
+      "y": 64,
       "color": "#e0a458",
       "oneLine": "不知周之梦为胡蝶与，胡蝶之梦为周与？",
       "device": "zhuangzi-butterfly",
@@ -2594,8 +2750,8 @@
       "school": "儒家 · 性恶论",
       "schoolEn": "Confucianism",
       "cluster": "warring",
-      "x": 26,
-      "y": 70,
+      "x": 24,
+      "y": 68,
       "color": "#e0a458",
       "oneLine": "人之性恶，其善者伪也。",
       "device": "xunzi-bend",
@@ -2742,6 +2898,167 @@
         "教出了韩非和李斯的老师，该为秦的严刑负责吗？"
       ],
       "device2Desc": "两条线：欲望与供给。拉大缺口，看「争」从哪里开始。"
+    },
+    {
+      "id": "hanfei",
+      "name": "韩非",
+      "en": "Han Fei",
+      "orig": "韓非",
+      "years": "约前 280 — 前 233",
+      "born": -280,
+      "era": "战国",
+      "school": "法家 · 法术势",
+      "schoolEn": "Legalism",
+      "cluster": "legalist",
+      "x": 29,
+      "y": 42,
+      "color": "#e0a458",
+      "oneLine": "不恃人之为吾善也，而恃其不得为非。",
+      "device": "hanfei-tripod",
+      "deviceTitle": "法术势",
+      "deviceDesc": "三条腿撑一个平台。抽掉任何一条，看它倒向哪一边、以什么方式倒。",
+      "deviceHint": "「抱法处势则治，背法去势则乱。」他不相信君主贤明，只相信结构不塌。",
+      "device2": "hanfei-rabbit",
+      "device2Title": "守株待兔",
+      "device2Hint": "「世异则事异，事异则备变。」这句话针对的不是懒，是那些把旧办法当常理的人。",
+      "bio": [
+        {
+          "y": "约前 280",
+          "t": "韩国宗室公子，天生口吃，不善言辞，遂著书。他与李斯同师荀子，李斯自认不如他。"
+        },
+        {
+          "y": "—",
+          "t": "屡次上书韩王主张变法，韩王不能用。他退而作《孤愤》《五蠹》《说难》等篇，十万余言。"
+        },
+        {
+          "y": "—",
+          "t": "《说难》专门研究游说之难：龙有逆鳞，触之则死。他把君主心理拆解得极细——后来他正是死在游说上。"
+        },
+        {
+          "y": "—",
+          "t": "秦王政读《孤愤》《五蠹》，叹：「嗟乎，寡人得见此人与之游，死不恨矣。」于是发兵攻韩，索要韩非。"
+        },
+        {
+          "y": "前 233",
+          "t": "韩王遣他使秦。秦王悦而未用，李斯与姚贾进谗：他是韩之诸公子，终为韩不为秦。下狱，李斯遣人送毒药，他欲自陈而不得见，遂自杀。"
+        },
+        {
+          "y": "—",
+          "t": "他的书活了下来。秦的制度里有他，汉以后的两千年里也有他——只是历朝都把他挂在嘴上批判、放在案下使用。"
+        }
+      ],
+      "positioning": {
+        "text": "荀子说人性恶、必须靠外力矫正，却没说完那外力是什么。韩非把答案写死了：不是礼乐，是法、术、势。他把商鞅的「法」、申不害的「术」、慎到的「势」合成一套机器——这台机器不要求君主聪明，只要求结构不塌。儒家的道德在他这里不是被反驳，是被绕过去了。",
+        "upstream": [
+          "荀子",
+          "商鞅（法）",
+          "申不害（术）",
+          "慎到（势）",
+          "老子（韩非有《解老》《喻老》）"
+        ],
+        "downstream": [
+          "秦制",
+          "李斯",
+          "历代律令",
+          "近代法治论（作为对照）"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "法",
+          "orig": "法",
+          "brief": "写下来、公开、一视同仁的赏罚。",
+          "detail": "「法者，编著之图籍，设之于官府，而布之于百姓者也。」三个要点：成文、公开、不因人而异。「不别亲疏，不殊贵贱，一断于法。」这在中国思想史上相当罕见——它把判断的标准从人的身份挪到了条文上。"
+        },
+        {
+          "title": "术",
+          "orig": "術",
+          "brief": "藏在君主心里、用来识人的方法。",
+          "detail": "「术者，藏之于胸中，以偶众端而潜御群臣者也。」法要公开，术必须隐藏。核心是「循名责实」：你说你能做到什么，就让你做，做完了拿结果对账。他的假设很冷：臣下一定会欺骗，问题只是你怎么发现。"
+        },
+        {
+          "title": "势",
+          "orig": "勢",
+          "brief": "位置本身带来的力量。",
+          "detail": "「飞龙乘云，腾蛇游雾」——云雾散了，龙蛇就和蚯蚓一样。他引慎到：尧为匹夫不能治三人，桀为天子能乱天下。所以关键不在君主是贤是愚，在他站在哪个位置上。这一条把儒家「修身以治国」的前提直接取消了。"
+        },
+        {
+          "title": "不恃人善",
+          "orig": "不恃人之為吾善",
+          "brief": "不要指望人好，要让他不能作恶。",
+          "detail": "「不恃人之为吾善也，而恃其不得为非也。」这是法家全部制度设计的支点。他举例：造车的人盼人富贵，做棺材的盼人早死——不是他们心善或心恶，是利益推着走。所以治国不靠感化，靠让「为非」的成本高到没人愿意付。"
+        },
+        {
+          "title": "世异事异",
+          "orig": "世異則事異",
+          "brief": "时代变了，办法就得变。",
+          "detail": "「宋人有耕田者，田中有株，兔走触株，折颈而死，因释其耒而守株，冀复得兔。」他不是在嘲笑一个农夫懒，而是在说：把偶然当规律，把旧经验当常理，是一整套政治思维的通病。「不期修古，不法常可。」"
+        }
+      ],
+      "works": [
+        {
+          "title": "韩非子",
+          "orig": "韓非子",
+          "year": "约前 3 世纪",
+          "gist": "五十五篇。先秦法家的集大成之作，也是先秦最锋利的一部政治分析。"
+        },
+        {
+          "title": "五蠹",
+          "orig": "五蠹",
+          "year": "—",
+          "gist": "把儒者、游侠、纵横家、患御者、商工之民列为五种蛀虫。「守株待兔」出自此篇。"
+        },
+        {
+          "title": "孤愤",
+          "orig": "孤憤",
+          "year": "—",
+          "gist": "写智术之士在朝堂上的孤立。秦王读后发兵索人。"
+        },
+        {
+          "title": "说难",
+          "orig": "說難",
+          "year": "—",
+          "gist": "论游说君主之难。他分析得极其精密，自己却死于同一件事。"
+        },
+        {
+          "title": "解老 · 喻老",
+          "orig": "解老 · 喻老",
+          "year": "—",
+          "gist": "中国最早的《老子》注释。他把「无为」读成君主不亲细务、只握赏罚。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "不恃人之为吾善也，而恃其不得为非也。",
+          "orig": "不恃人之為吾善也，而恃其不得為非也。",
+          "src": "《韩非子 · 显学》",
+          "note": "整部法家的支点。注意「不得」二字——不是不想，是不能。"
+        },
+        {
+          "cn": "世异则事异，事异则备变。",
+          "orig": "世異則事異，事異則備變。",
+          "src": "《韩非子 · 五蠹》",
+          "note": "「备」是应对的措施。这句常被引作改革依据，原意更接近：不换办法就会失效。"
+        },
+        {
+          "cn": "人主之患在于信人，信人则制于人。",
+          "orig": "人主之患在於信人，信人則制於人。",
+          "src": "《韩非子 · 备内》",
+          "note": "这句最见其冷。他连君主对妻子的信任都算作漏洞。"
+        },
+        {
+          "cn": "儒以文乱法，侠以武犯禁。",
+          "orig": "儒以文亂法，俠以武犯禁。",
+          "src": "《韩非子 · 五蠹》",
+          "note": "他反对的不是学问与勇气，是这两种人都在法之外另立一套评价标准。"
+        }
+      ],
+      "questions": [
+        "如果制度只需要人不作恶、不需要人向善，那「好人」还有什么用？",
+        "他写的《说难》精确到令人胆寒，为什么自己还是死在游说上？",
+        "秦用其术而二世而亡——是他的机器有 bug，还是机器太有效？"
+      ],
+      "device2Desc": "拖动「世」——时代变了，田里的兔子没了。农夫还守着那个树桩。"
     },
     {
       "id": "augustine",
@@ -3220,8 +3537,8 @@
       "school": "心学",
       "schoolEn": "Xinxue / School of Mind",
       "cluster": "ming",
-      "x": 65,
-      "y": 62,
+      "x": 62,
+      "y": 56,
       "color": "#e0a458",
       "oneLine": "你未看此花时，此花与汝心同归于寂。",
       "device": "wangyangming-flower",
@@ -3383,8 +3700,8 @@
       "school": "理性主义",
       "schoolEn": "Rationalism",
       "cluster": "early",
-      "x": 73,
-      "y": 28,
+      "x": 68,
+      "y": 24,
       "color": "#4fd1c5",
       "oneLine": "我思，故我在。",
       "device": "descartes-doubt",
@@ -3556,8 +3873,8 @@
       "school": "理性主义 · 一元论",
       "schoolEn": "Rationalism",
       "cluster": "early",
-      "x": 73,
-      "y": 46,
+      "x": 72,
+      "y": 48,
       "color": "#4fd1c5",
       "oneLine": "神，或说自然。",
       "device": "spinoza-substance",
@@ -3712,7 +4029,7 @@
       "school": "经验论 · 怀疑论",
       "schoolEn": "Empiricism",
       "cluster": "early",
-      "x": 78,
+      "x": 76,
       "y": 72,
       "color": "#4fd1c5",
       "oneLine": "因果，不过是一种习惯。",
@@ -3877,8 +4194,8 @@
       "school": "德国古典 · 先验唯心论",
       "schoolEn": "Transcendental Idealism",
       "cluster": "early",
-      "x": 83,
-      "y": 44,
+      "x": 80,
+      "y": 38,
       "color": "#4fd1c5",
       "oneLine": "头顶的星空与心中的道德律。",
       "device": "kant-glasses",
@@ -4053,8 +4370,8 @@
       "school": "意志主义 · 悲观主义",
       "schoolEn": "Voluntarism / Pessimism",
       "cluster": "modern",
-      "x": 92,
-      "y": 30,
+      "x": 85,
+      "y": 62,
       "color": "#4fd1c5",
       "oneLine": "人生在痛苦与无聊之间，像钟摆一样来回。",
       "device": "schopenhauer-pendulum",
@@ -4225,8 +4542,8 @@
       "school": "生命哲学 · 意志主义",
       "schoolEn": "Lebensphilosophie",
       "cluster": "modern",
-      "x": 95,
-      "y": 52,
+      "x": 89,
+      "y": 28,
       "color": "#4fd1c5",
       "oneLine": "假如这一生必须原样重来无数次，你会怎样？",
       "device": "nietzsche-recurrence",
@@ -4400,8 +4717,8 @@
       "school": "现象学 · 存在论",
       "schoolEn": "Phenomenology",
       "cluster": "modern",
-      "x": 88,
-      "y": 66,
+      "x": 93,
+      "y": 50,
       "color": "#4fd1c5",
       "oneLine": "「存在」的意义，今天已被遗忘。",
       "device": "heidegger-tool",
@@ -4557,6 +4874,179 @@
       "device2Desc": "一条属于你的时间线，终点是那个谁也替不了的死。可以回避，也可以直视。"
     },
     {
+      "id": "wittgenstein",
+      "name": "维特根斯坦",
+      "en": "Ludwig Wittgenstein",
+      "orig": "Ludwig Wittgenstein",
+      "years": "1889 — 1951",
+      "born": 1889,
+      "era": "现代",
+      "school": "分析哲学 · 语言哲学",
+      "schoolEn": "Analytic Philosophy",
+      "cluster": "analytic",
+      "x": 96,
+      "y": 24,
+      "color": "#4fd1c5",
+      "oneLine": "对于不可说的，必须保持沉默。",
+      "device": "wittgenstein-picture",
+      "deviceTitle": "图像论",
+      "deviceDesc": "左边是一个事实，右边是一个命题。命题之所以为真，是因为它的结构与事实同构。",
+      "deviceHint": "「命题是实在的图像。」前期他认为语言与世界的对应是严丝合缝的——后来他自己把这本书推翻了。",
+      "device2": "wittgenstein-family",
+      "device2Title": "家族相似",
+      "device2Hint": "「不要想，而要看！」他反对「游戏必有共同本质」——有的只是交错重叠的相似。",
+      "bio": [
+        {
+          "y": "1889",
+          "t": "生于维也纳，父亲是奥匈帝国钢铁工业巨头，家中八个孩子中最小的。这个家庭是当时维也纳文化圈的中心：勃拉姆斯、马勒都是座上客。三个哥哥先后自杀。"
+        },
+        {
+          "y": "1908",
+          "t": "赴曼彻斯特学航空工程，研究螺旋桨。因为要处理数学，读到罗素的《数学原理》，转向哲学。"
+        },
+        {
+          "y": "1911",
+          "t": "先去耶拿找弗雷格，弗雷格说你该去剑桥找罗素。罗素起初嫌他烦，几周后说：「他要么是天才，要么是疯子。」"
+        },
+        {
+          "y": "1914",
+          "t": "一战爆发，自愿入伍，在东线与意大利前线服役。《逻辑哲学论》的大部分是在战壕与战俘营里写成的。"
+        },
+        {
+          "y": "1921",
+          "t": "《逻辑哲学论》德文出版，次年出英德对照本，罗素作序。他嫌罗素的序误解了他。此后他认为哲学问题已全部解决，转去当小学教师。"
+        },
+        {
+          "y": "1922",
+          "t": "在奥地利偏远山村教书六年。他编字典、带孩子做实验，也因体罚学生惹上风波，1926 年辞职。"
+        },
+        {
+          "y": "1929",
+          "t": "回到剑桥，以《逻辑哲学论》作为博士论文答辩。摩尔与罗素任考官，据说他拍拍两人肩膀说：别担心，我知道你们永远搞不懂。"
+        },
+        {
+          "y": "1939",
+          "t": "接摩尔教席。二战期间在医院做勤务员，不愿在实验室「跟人保持距离」。"
+        },
+        {
+          "y": "1951",
+          "t": "卒于剑桥。临终对医生说：「告诉他们，我度过了极为美好的一生。」《哲学研究》1953 年出版，此时他已不在。"
+        }
+      ],
+      "positioning": {
+        "text": "他是哲学史上少见的、亲手推翻自己早期著作的人，而且推得比谁都彻底。《逻辑哲学论》要的是语言的精确边界；《哲学研究》说，那个边界本身就是个幻觉——语言没有唯一的逻辑，只有无数种用法。这两本书之间隔着二十年，也隔着整个分析哲学的分裂。",
+        "upstream": [
+          "弗雷格",
+          "罗素",
+          "叔本华（早期）",
+          "克尔凯郭尔（晚期私下）"
+        ],
+        "downstream": [
+          "维也纳学派（被误读）",
+          "日常语言哲学",
+          "奥斯汀",
+          "克里普克",
+          "心灵哲学"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "图像论",
+          "orig": "Bildtheorie",
+          "brief": "命题是事实的图像。",
+          "detail": "「命题是实在的图像。」一个命题之所以有意义，是因为它的要素与事态中的对象一一对应，结构也相同。像地图与地形：地图能画出来，是因为它们共享某种形式。所以他说「真」不是符合某个东西，而是图像与事实结构重合。"
+        },
+        {
+          "title": "可说与不可说",
+          "orig": "Unsagbares",
+          "brief": "语言的边界之外，只能沉默。",
+          "detail": "「凡是可说的，都能说清楚；对于不可说的，必须保持沉默。」可说的是自然科学的事实；不可说的是伦理、美学、宗教、生命意义——它们不是假的，是无法被言说。全书最后一句正是：对于不可说的，必须保持沉默。"
+        },
+        {
+          "title": "语言游戏",
+          "orig": "Sprachspiel",
+          "brief": "语言不是一幅画，是一堆活动。",
+          "detail": "他把语言比作工具箱：锤子、钉子、胶水、尺子，功能各不相同。命令、报告、演戏、唱歌、猜谜——都是语言游戏。意义不来自与世界的对应，来自这个游戏里的用法。所以他说：不要问「它是什么意思」，要问「它是怎么用的」。"
+        },
+        {
+          "title": "家族相似",
+          "orig": "Familienähnlichkeit",
+          "brief": "没有共同本质，只有交错的相似。",
+          "detail": "「游戏」包括棋、牌、球、过家家——它们的共同点是什么？他让你去找，结果发现：有的有输赢，有的没有；有的有规则，有的随意。相似之处像一张网，两两相邻，却没有一根线穿过所有。「不要想，而要看！」"
+        },
+        {
+          "title": "哲学作为治疗",
+          "orig": "Therapie",
+          "brief": "哲学不解决问题，是拆掉问题。",
+          "detail": "「哲学是一场反对语言对我们的迷惑的战斗。」很多哲学难题不是深奥，是语法造成的错觉——像问「时间是什么」，我们被名词骗着去找一个叫时间的东西。哲学家的工作是苍蝇从瓶子里出去的那条路："
+        }
+      ],
+      "works": [
+        {
+          "title": "逻辑哲学论",
+          "orig": "Tractatus Logico-Philosophicus",
+          "year": "1921",
+          "gist": "七个主命题，层层展开。全书不到八十页，二十世纪最难读也最常被引用的哲学书之一。"
+        },
+        {
+          "title": "哲学研究",
+          "orig": "Philosophische Untersuchungen",
+          "year": "1953（遗著）",
+          "gist": "前后两部分的对照。他把前期自己那套理论逐条拆掉。"
+        },
+        {
+          "title": "蓝皮书与褐皮书",
+          "orig": "The Blue and Brown Books",
+          "year": "1933 — 1935（讲义）",
+          "gist": "课堂笔记。后期思想的过渡稿，比《哲学研究》好读。"
+        },
+        {
+          "title": "论确实性",
+          "orig": "Über Gewißheit",
+          "year": "1969（遗稿）",
+          "gist": "最后两年写的笔记。论「我知道」与「我相信」的语法差别。"
+        },
+        {
+          "title": "文化与价值",
+          "orig": "Vermischte Bemerkungen",
+          "year": "1977（遗稿）",
+          "gist": "散论。关于音乐、犹太身份、写作与宗教的私人笔记。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "凡是可说的，都能说清楚；对于不可说的，必须保持沉默。",
+          "orig": "Wovon man nicht sprechen kann, darüber muss man schweigen.",
+          "src": "《逻辑哲学论》命题 7",
+          "note": "全书最后一句。整本书的写作目的，就是给「可说」划一条线。"
+        },
+        {
+          "cn": "我的语言的界限，意味着我的世界的界限。",
+          "orig": "Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt.",
+          "src": "《逻辑哲学论》命题 5.6",
+          "note": "注意是「我的」语言，不是「语言」。这一句后来被他自己的后期思想推翻。"
+        },
+        {
+          "cn": "不要想，而要看！",
+          "orig": "Denk nicht, sondern schau!",
+          "src": "《哲学研究》§66",
+          "note": "针对的是「游戏必有共同本质」的冲动。看，就是去看具体的例子。"
+        },
+        {
+          "cn": "一个词的意义，就是它在语言中的用法。",
+          "orig": "Die Bedeutung eines Wortes ist sein Gebrauch in der Sprache.",
+          "src": "《哲学研究》§43",
+          "note": "一整部后期哲学都可以看作这一句的展开。"
+        }
+      ],
+      "questions": [
+        "如果伦理与意义都不可说，那《逻辑哲学论》为什么还要写？",
+        "一个词的意思由用法决定——那么「用法错了」还有没有可能？",
+        "他前期说语言有唯一逻辑，后期说没有。哪一次更接近真的？"
+      ],
+      "device2Desc": "五个「游戏」，五个特征。逐个检查每一列，你会发现没有一列是全勾的。"
+    },
+    {
       "id": "camus",
       "name": "加缪",
       "en": "Albert Camus",
@@ -4567,8 +5057,8 @@
       "school": "荒诞哲学",
       "schoolEn": "Absurdism",
       "cluster": "modern",
-      "x": 98,
-      "y": 74,
+      "x": 99,
+      "y": 72,
       "color": "#4fd1c5",
       "oneLine": "必须想象西西弗斯是幸福的。",
       "device": "camus-sisyphus",

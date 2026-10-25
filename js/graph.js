@@ -17,6 +17,7 @@
     xunzi: "#bf8f52",
     huineng: "#d4a05e",
     wangyangming: "#e6c072",
+    hanfei: "#b8843f",
     // 西方
     socrates: "#4fd1c5",
     plato: "#46b8c9",
@@ -30,12 +31,13 @@
     schopenhauer: "#8f7fd8",
     nietzsche: "#e07a9a",
     heidegger: "#c98fb0",
-    camus: "#b98ba8"
+    camus: "#b98ba8",
+    wittgenstein: "#a8c8ff"
   };
 
   var EAST = {
     laozi: 1, confucius: 1, zhuangzi: 1,
-    mengzi: 1, xunzi: 1, huineng: 1, wangyangming: 1
+    mengzi: 1, xunzi: 1, huineng: 1, wangyangming: 1, hanfei: 1
   };
 
   var wrapEl = document.querySelector(".canvas-wrap");
