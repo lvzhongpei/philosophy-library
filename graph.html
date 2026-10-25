@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念图谱 · 哲学图书馆</title>
+<meta name="description" content="42 个哲学概念、66 条思想连线：从理念到意志，从齐物到视角主义，看六位哲学家之间怎样互相呼应。">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='3' fill='%234fd1c5'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%234fd1c5' stroke-opacity='.45' stroke-width='1'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/graph.css">
+</head>
+<body class="page-graph">
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark" aria-hidden="true">✦</span>
+    <span class="brand-cn">哲学图书馆</span>
+    <span class="brand-en">PHILOSOPHIA · DEEP FIELD</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a class="navlink" href="index.html">← 星图</a>
+  </div>
+</header>
+
+<main>
+  <div class="graph-head">
+    <h1>概念图谱</h1>
+    <p>
+      <span id="statLine">42 个概念、66 条连线</span>。同色实线是同一位哲学家内部的脉络，
+      <span class="cross">暖色虚线</span>是跨越传统的呼应——理念通向意志，齐物通向视角主义。
+      拖动可以重排，点开看它是什么。
+    </p>
+  </div>
+
+  <div class="graph-bar">
+    <div class="chips" id="chips"></div>
+    <button class="btn ghost" id="resetLayout" type="button">重排</button>
+  </div>
+
+  <div class="graph-stage">
+    <div class="canvas-wrap">
+      <canvas id="graphCanvas"></canvas>
+      <p class="graph-tip" id="graphTip">拖动节点 · 点开看解释</p>
+    </div>
+    <aside class="graph-panel" id="panel" aria-live="polite">
+      <p class="gp-empty">点一个节点，看它是什么。</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <span>哲学图书馆 · 概念图谱</span>
+  <span>连线为思想关联的示意，非史料考据。</span>
+  <a href="https://github.com/lvzhongpei/philosophy-library" target="_blank" rel="noopener">GITHUB ↗</a>
+</footer>
+
+<script src="js/starfield.js"></script>
+<script src="js/canvas-kit.js"></script>
+<script src="js/graph.js"></script>
+</body>
+</html>

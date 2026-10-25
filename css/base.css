@@ -168,6 +168,25 @@ button {
   overflow: hidden;
 }
 
+.navlink {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  color: var(--faint);
+  padding: 6px 4px;
+  margin-right: 4px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.navlink:hover {
+  color: var(--cyan);
+}
+
+.devices .device + .device {
+  margin-top: 28px;
+}
+
 .viewswitch button {
   padding: 6px 15px;
   font-family: var(--mono);

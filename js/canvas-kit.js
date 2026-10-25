@@ -178,6 +178,10 @@
     ctx.fillStyle = opt.color || "rgba(233,238,246,0.9)";
     ctx.textAlign = opt.align || "center";
     ctx.textBaseline = opt.baseline || "middle";
+    if (opt.halo) {
+      ctx.shadowColor = "rgba(5,7,13,0.95)";
+      ctx.shadowBlur = opt.halo;
+    }
     ctx.fillText(text, x, y);
     ctx.restore();
   }

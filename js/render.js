@@ -162,18 +162,26 @@
       .join("");
     art.appendChild(section("works", '<ul class="works">' + works + "</ul>"));
 
-    // 05 装置
+    // 05 装置（两个）
+    function panel(i, title, desc, hint) {
+      return (
+        '<div class="device">' +
+        '<div class="device-head"><h3>' + title + "</h3>" +
+        '<span class="tag">装置 ' + (i === 1 ? "一" : "二") + " · INTERACTIVE</span></div>" +
+        '<p class="device-desc">' + desc + "</p>" +
+        '<div class="stage-wrap"><canvas id="deviceCanvas' + i +
+        '" aria-label="' + title + '"></canvas></div>' +
+        '<div class="controls" id="deviceControls' + i + '"></div>' +
+        '<p class="device-hint">' + hint + "</p>" +
+        "</div>"
+      );
+    }
+
     var devEl = section(
       "device",
-      '<div class="device">' +
-        '<div class="device-head"><h3>' + p.deviceTitle + "</h3>" +
-        '<span class="tag">INTERACTIVE</span></div>' +
-        '<p class="device-desc">' + p.deviceDesc + "</p>" +
-        '<div class="stage-wrap"><canvas id="deviceCanvas" aria-label="' +
-        p.deviceTitle +
-        '"></canvas></div>' +
-        '<div class="controls" id="deviceControls"></div>' +
-        '<p class="device-hint">' + p.deviceHint + "</p>" +
+      '<div class="devices">' +
+        panel(1, p.deviceTitle, p.deviceDesc, p.deviceHint) +
+        panel(2, p.device2Title, p.device2Desc, p.device2Hint) +
         "</div>"
     );
     art.appendChild(devEl);
@@ -202,10 +210,20 @@
     art.appendChild(section("asks", '<ol class="asks">' + asks + "</ol>"));
 
     /* ---------------- 装置挂载 ---------------- */
-    var canvas = $("deviceCanvas");
-    var controls = $("deviceControls");
-    var mount = window.DEVICES && window.DEVICES[p.device];
-    if (mount && canvas) {
+    [[1, p.device], [2, p.device2]].forEach(function (pair) {
+      var idx = pair[0];
+      var key = pair[1];
+      var canvas = $("deviceCanvas" + idx);
+      var controls = $("deviceControls" + idx);
+      var mount = window.DEVICES && window.DEVICES[key];
+      if (!canvas || !controls) return;
+      if (!mount) {
+        controls.innerHTML =
+          '<span style="color:#e0a458;font-family:var(--mono);font-size:11px">未找到装置：' +
+          key +
+          "</span>";
+        return;
+      }
       try {
         mount({ canvas: canvas, controls: controls });
       } catch (err) {
@@ -214,7 +232,7 @@
           err.message +
           "</span>";
       }
-    }
+    });
 
     /* ---------------- 上下篇 ---------------- */
     var prev = list[(idx - 1 + list.length) % list.length];

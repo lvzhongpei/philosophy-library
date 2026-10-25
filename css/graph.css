@@ -1,0 +1,312 @@
+/* ============================================================
+   graph.css — 概念图谱
+   ============================================================ */
+
+.page-graph main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.graph-head {
+  padding: clamp(26px, 4.5vh, 48px) 0 18px;
+}
+
+.graph-head h1 {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 0.14em;
+}
+
+.graph-head p {
+  margin: 0;
+  max-width: 52em;
+  font-size: 13.5px;
+  line-height: 1.95;
+  color: var(--dim);
+}
+
+.graph-head .cross {
+  color: var(--amber);
+  border-bottom: 1px dashed rgba(224, 164, 88, 0.45);
+}
+
+.graph-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+}
+
+.chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+  border: 1px solid var(--hair);
+  border-radius: 100px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.chip-btn .dot-c {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c, var(--cyan));
+  box-shadow: 0 0 8px var(--c, var(--cyan));
+}
+
+.chip-btn:hover {
+  color: var(--dim);
+  border-color: var(--hair-strong);
+}
+
+.chip-btn.is-on {
+  color: var(--void);
+  background: var(--c, var(--cyan));
+  border-color: var(--c, var(--cyan));
+}
+
+.chip-btn.is-on .dot-c {
+  background: var(--void);
+  box-shadow: none;
+}
+
+.graph-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  padding: 18px 0 44px;
+  align-items: start;
+}
+
+.canvas-wrap {
+  position: relative;
+  border: 1px solid var(--hair);
+  background:
+    radial-gradient(70% 70% at 45% 45%, rgba(79, 209, 197, 0.035), transparent 72%),
+    #04060b;
+  overflow: hidden;
+}
+
+#graphCanvas {
+  display: block;
+  width: 100%;
+  height: clamp(440px, 62vh, 660px);
+  touch-action: none;
+  cursor: grab;
+}
+
+#graphCanvas.is-dragging {
+  cursor: grabbing;
+}
+
+.graph-tip {
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--faint);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* 侧栏 */
+.graph-panel {
+  border: 1px solid var(--hair);
+  padding: 18px 18px 20px;
+  background: rgba(255, 255, 255, 0.018);
+  min-height: 220px;
+}
+
+.gp-empty {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+  line-height: 2;
+}
+
+.gp-phi {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  color: var(--faint);
+  margin-bottom: 10px;
+}
+
+.gp-phi .dot-c {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c, var(--cyan));
+  box-shadow: 0 0 8px var(--c, var(--cyan));
+}
+
+.graph-panel h2 {
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.08em;
+}
+
+.gp-en {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--c, var(--cyan));
+  opacity: 0.75;
+  margin: 0 0 12px;
+  word-break: break-word;
+}
+
+.gp-desc {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  line-height: 1.95;
+  color: var(--dim);
+}
+
+.gp-rel {
+  border-top: 1px solid var(--hair);
+  padding-top: 12px;
+}
+
+.gp-rel h4 {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--faint);
+}
+
+.gp-rel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.gp-rel button {
+  padding: 3px 9px;
+  font-size: 12px;
+  color: var(--dim);
+  border: 1px solid var(--hair);
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.gp-rel button:hover {
+  color: var(--void);
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.gp-go {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--c, var(--cyan));
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+/* 空态图例 */
+.gp-legend {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hair);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.gp-leg-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.gp-leg-row .dot-c {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c, var(--cyan));
+  box-shadow: 0 0 8px var(--c, var(--cyan));
+  flex: 0 0 auto;
+}
+
+.gp-leg-name {
+  font-family: var(--serif);
+  letter-spacing: 0.06em;
+}
+
+.gp-leg-sub {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+}
+
+.gp-leg-count {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
+.gp-note {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--hair);
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--faint);
+}
+
+@media (max-width: 900px) {
+  .graph-stage {
+    grid-template-columns: 1fr;
+  }
+
+  #graphCanvas {
+    height: clamp(420px, 62vh, 560px);
+  }
+
+  .graph-panel {
+    min-height: 0;
+  }
+}
