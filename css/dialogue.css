@@ -1,0 +1,271 @@
+/* ============================================================
+   dialogue.css — 十组对话
+   ============================================================ */
+
+.dg-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.dg-hero {
+  padding: clamp(30px, 5vh, 58px) 0 clamp(18px, 3vh, 30px);
+}
+
+.dg-kicker {
+  margin: 0 0 10px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  color: var(--faint);
+}
+
+.dg-hero h1 {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 48px);
+  letter-spacing: 0.16em;
+}
+
+.dg-lead {
+  margin: 0;
+  max-width: 44em;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--dim);
+}
+
+.dg-lead b {
+  color: var(--amber);
+  font-weight: 400;
+}
+
+/* 目录 */
+.dg-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--hair);
+}
+
+.dg-toc a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 5px 11px;
+  font-size: 12.5px;
+  color: var(--dim);
+  border: 1px solid var(--hair);
+  border-radius: 100px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.dg-toc a .n {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+}
+
+.dg-toc a:hover {
+  color: var(--ink);
+  border-color: var(--hair-strong);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dg-toc a:hover .n {
+  color: var(--cyan);
+}
+
+/* 条目 */
+.dg {
+  padding: clamp(30px, 5vh, 52px) 0;
+  border-top: 1px solid var(--hair);
+}
+
+.dg-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.dg-n {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--faint);
+}
+
+.dg h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(21px, 3vw, 28px);
+  letter-spacing: 0.1em;
+}
+
+/* 甲乙两栏 */
+.dg-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px minmax(0, 1fr);
+  align-items: stretch;
+  margin-bottom: 26px;
+}
+
+.dg-side {
+  padding: 18px 20px 20px;
+  border: 1px solid var(--hair);
+  background: rgba(255, 255, 255, 0.018);
+  position: relative;
+}
+
+.dg-side::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--tc, var(--cyan));
+  opacity: 0.55;
+}
+
+.dg-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  color: var(--faint);
+  margin-bottom: 8px;
+}
+
+.dg-cn {
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.dg-en {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--tc, var(--cyan));
+  opacity: 0.7;
+  margin: 5px 0 14px;
+  word-break: break-word;
+}
+
+.dg-quote {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--ink);
+  opacity: 0.92;
+}
+
+.dg-orig {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(150, 170, 210, 0.22);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.8;
+  color: var(--faint);
+  word-break: break-word;
+}
+
+.dg-src {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+}
+
+.dg-phi {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.dg-phi a {
+  color: var(--tc, var(--cyan));
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  opacity: 0.85;
+}
+
+.dg-phi a:hover {
+  opacity: 1;
+}
+
+.dg-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  padding-top: 20px;
+}
+
+/* 正文 */
+.dg-body p {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: clamp(15px, 1.85vw, 16.5px);
+  line-height: 2.1;
+  color: var(--ink);
+  opacity: 0.88;
+}
+
+.dg-body p:first-child::first-letter {
+  font-size: 1.1em;
+  color: var(--amber);
+}
+
+.dg-ask {
+  margin: 22px 0 0;
+  padding: 16px 18px;
+  border-left: 2px solid rgba(224, 164, 88, 0.55);
+  background: rgba(224, 164, 88, 0.04);
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(233, 238, 246, 0.8);
+}
+
+.dg-ask::before {
+  content: "追问 · ";
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--amber);
+  opacity: 0.8;
+}
+
+@media (max-width: 760px) {
+  .dg-pair {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dg-vs {
+    padding: 0;
+    justify-content: flex-start;
+    padding-left: 4px;
+  }
+
+  .dg-side {
+    padding: 16px 16px 18px;
+  }
+}

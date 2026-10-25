@@ -34,7 +34,11 @@
 
   var W = 0, H = 0;
   var nodes = [], edges = [], idxOf = {};
-  var phiName = {}, phiSchool = {}, phis = [];
+  var phiName = {}, phiSchool = {}, phiYears = {}, phis = [];
+  var order = [];        // 按出生年排序的哲学家 id
+  var orderIdx = {};     // phi -> 在时间轴上的位次
+  var tl = { pos: 1, v: 1, playing: false, last: 0 };
+  var tlRange, tlOut, playBtn;
 
   var state = {
     hover: -1,
@@ -177,6 +181,44 @@
     }
   }
 
+  /* ---------------- 时间轴 ---------------- */
+
+  function litAmt(phi) {
+    var i = orderIdx[phi];
+    if (i == null) return 1;
+    return Math.max(0, Math.min(1, tl.v - i));
+  }
+
+  function syncTlUi() {
+    if (!tlRange) return;
+    if (tl.pos >= order.length) {
+      tlOut.textContent = "全部";
+      tlRange.value = order.length;
+    } else {
+      var i = Math.max(0, Math.min(order.length - 1, Math.ceil(tl.pos) - 1));
+      tlOut.textContent = phiName[order[i]] + " · " + phiYears[order[i]];
+      tlRange.value = Math.max(1, Math.round(tl.pos));
+    }
+  }
+
+  function stopPlay() {
+    tl.playing = false;
+    if (playBtn) playBtn.textContent = "▶ 沿时间播放";
+  }
+
+  function togglePlay() {
+    if (tl.playing) {
+      stopPlay();
+      return;
+    }
+    if (tl.pos >= order.length) {
+      tl.pos = 1;
+      tl.v = 0.999;
+    }
+    tl.playing = true;
+    if (playBtn) playBtn.textContent = "❚❚ 暂停";
+  }
+
   /* ---------------- 绘制 ---------------- */
 
   function focusSet() {
@@ -200,10 +242,21 @@
       var e = edges[i];
       var a = nodes[e.a];
       var b = nodes[e.b];
+      var la1 = litAmt(a.d.phi);
+      var lb1 = litAmt(b.d.phi);
+      var ea = Math.min(la1, lb1);
+      if (ea < 0.03) continue;
+
       var dimFilter = state.filter && (a.d.phi !== state.filter && b.d.phi !== state.filter);
-      var a1 = 1;
+      var a1 = ea;
       if (dimFilter) a1 = 0.05;
-      else if (fs) a1 = fs[e.a] && fs[e.b] ? 1 : 0.12;
+      else if (fs) a1 = fs[e.a] && fs[e.b] ? ea : 0.12;
+
+      // 刚被点亮的那条边闪一下
+      var late = Math.max(orderIdx[a.d.phi] == null ? 0 : orderIdx[a.d.phi],
+                          orderIdx[b.d.phi] == null ? 0 : orderIdx[b.d.phi]);
+      var rec = Math.max(0, 1 - (tl.pos - late - 1));
+      if (rec > 0.05 && !dimFilter) a1 = Math.min(1, a1 + rec * 0.7);
 
       var col = e.cross ? "#e0a458" : COLORS[a.d.phi];
       ctx.beginPath();
@@ -219,9 +272,11 @@
     // 节点
     for (var k = 0; k < nodes.length; k++) {
       var n = nodes[k];
+      var la = litAmt(n.d.phi);
+      if (la < 0.02) continue;
       var dimmed = state.filter && n.d.phi !== state.filter;
       var inFocus = !fs || fs[k];
-      var base = dimmed ? 0.1 : inFocus ? 1 : 0.22;
+      var base = (dimmed ? 0.1 : inFocus ? 1 : 0.22) * la;
       var col2 = COLORS[n.d.phi];
 
       if (!dimmed && base > 0.5) {
@@ -235,8 +290,8 @@
       }
 
       ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, TAU);
-      ctx.fillStyle = hexA(col2, (dimmed ? 0.35 : 0.92) * (inFocus ? 1 : 0.6));
+      ctx.arc(n.x, n.y, n.r * (0.6 + 0.4 * la), 0, TAU);
+      ctx.fillStyle = hexA(col2, (dimmed ? 0.35 : 0.92) * (inFocus ? 1 : 0.6) * (0.25 + 0.75 * la));
       ctx.fill();
       ctx.strokeStyle = "rgba(5,7,13,0.9)";
       ctx.lineWidth = 1;
@@ -262,7 +317,7 @@
       var m = nodes[q];
       var dim2 = state.filter && m.d.phi !== state.filter;
       var foc = !fs || fs[q];
-      if (dim2) continue;
+      if (dim2 || litAmt(m.d.phi) < 0.15) continue;
       // 窄屏只显示主干节点，避免文字挤成一团
       var must = state.sel === q || state.hover === q || (fs && fs[q]);
       if (!must && !showAll && m.deg < 4) continue;
@@ -273,6 +328,24 @@
       ctx.fillStyle = "rgba(226,236,250," + alpha + ")";
       ctx.fillText(m.d.name, m.x, m.y + m.r + 11);
       ctx.restore();
+    }
+
+    // 时间轴进度线（姓名与年代在下方控制条里）
+    if (tl.pos < order.length - 0.999) {
+      var ci2 = Math.max(0, Math.min(order.length - 1, Math.ceil(tl.pos) - 1));
+      var col3 = COLORS[order[ci2]] || "#4fd1c5";
+      var pw = W - 52;
+      ctx.beginPath();
+      ctx.moveTo(26, H - 34);
+      ctx.lineTo(26 + pw, H - 34);
+      ctx.strokeStyle = "rgba(150,170,210,0.12)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(26, H - 34);
+      ctx.lineTo(26 + pw * Math.min(1, tl.pos / order.length), H - 34);
+      ctx.strokeStyle = hexA(col3, 0.75);
+      ctx.stroke();
     }
   }
 
@@ -467,8 +540,17 @@
       phis = data.philosophers.map(function (p) {
         phiName[p.id] = p.name;
         phiSchool[p.id] = p.school;
+        phiYears[p.id] = p.years;
         return p.id;
       });
+
+      order = data.philosophers
+        .slice()
+        .sort(function (a2, b2) { return a2.born - b2.born; })
+        .map(function (p) { return p.id; });
+      order.forEach(function (id, i) { orderIdx[id] = i; });
+      tl.pos = order.length;
+      tl.v = tl.pos;
 
       data.concepts.forEach(function (c, i) {
         idxOf[c.id] = i;
@@ -523,8 +605,40 @@
       seed();
       for (var s = 0; s < 220; s++) step();
 
+      tlRange = document.getElementById("tlRange");
+      tlOut = document.getElementById("tlOut");
+      playBtn = document.getElementById("playBtn");
+
+      if (tlRange) {
+        tlRange.min = 1;
+        tlRange.max = order.length;
+        tlRange.value = order.length;
+        tlRange.addEventListener("input", function () {
+          stopPlay();
+          tl.pos = Number(tlRange.value);
+          syncTlUi();
+        });
+      }
+      if (playBtn) {
+        playBtn.addEventListener("click", togglePlay);
+      }
+
       var raf;
       function loop(now) {
+        if (!tl.last) tl.last = now;
+        var dt = Math.min(0.06, Math.max(0, (now - tl.last) / 1000));
+        tl.last = now;
+
+        if (tl.playing) {
+          tl.pos += dt * 1.4;
+          if (tl.pos >= order.length) {
+            tl.pos = order.length;
+            stopPlay();
+          }
+          syncTlUi();
+        }
+        tl.v += (tl.pos - tl.v) * 0.14;
+
         step();
         step();
         draw(now / 1000);
@@ -547,6 +661,7 @@
           cancelAnimationFrame(raf);
         } else {
           cancelAnimationFrame(raf);
+          tl.last = 0;
           raf = requestAnimationFrame(loop);
         }
       });

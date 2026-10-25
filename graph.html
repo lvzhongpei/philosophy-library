@@ -21,6 +21,7 @@
     <span class="brand-en">PHILOSOPHIA · DEEP FIELD</span>
   </a>
   <div style="display:flex;align-items:center;gap:14px">
+    <a class="navlink" href="dialogue.html">对话</a>
     <a class="navlink" href="index.html">← 星图</a>
   </div>
 </header>
@@ -41,9 +42,16 @@
   </div>
 
   <div class="graph-stage">
-    <div class="canvas-wrap">
-      <canvas id="graphCanvas"></canvas>
-      <p class="graph-tip" id="graphTip">拖动节点 · 点开看解释</p>
+    <div class="graph-left">
+      <div class="canvas-wrap">
+        <canvas id="graphCanvas"></canvas>
+        <p class="graph-tip" id="graphTip">拖动节点 · 点开看解释</p>
+      </div>
+      <div class="timeline-bar">
+        <button id="playBtn" class="btn" type="button">▶ 沿时间播放</button>
+        <input id="tlRange" type="range" min="0" max="12" value="12" step="1" aria-label="时间轴">
+        <output id="tlOut">全部</output>
+      </div>
     </div>
     <aside class="graph-panel" id="panel" aria-live="polite">
       <p class="gp-empty">点一个节点，看它是什么。</p>

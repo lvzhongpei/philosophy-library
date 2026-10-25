@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>十组对话 · 哲学图书馆</title>
+<meta name="description" content="十条跨越传统的连线：礼与豪猪困境、中道与中庸、绝对命令与良知、洞穴与镜喻……每一组都不是「他们说了同样的话」，而是「他们在同一个问题上给出了不同的答案」。">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='3' fill='%234fd1c5'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%234fd1c5' stroke-opacity='.45' stroke-width='1'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/dialogue.css">
+</head>
+<body class="page-dialogue">
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark" aria-hidden="true">✦</span>
+    <span class="brand-cn">哲学图书馆</span>
+    <span class="brand-en">PHILOSOPHIA · DEEP FIELD</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a class="navlink" href="graph.html">图谱</a>
+    <a class="navlink" href="index.html">← 星图</a>
+  </div>
+</header>
+
+<main class="dg-main">
+  <div class="dg-hero">
+    <p class="dg-kicker">TEN DIALOGUES · ACROSS TRADITIONS</p>
+    <h1>十组对话</h1>
+    <p class="dg-lead">
+      以下十组，是从概念图谱的一百多条连线里挑出的<b>跨传统</b>那十条。
+      每一组都不是「他们说了同样的话」，而是「他们在同一个问题上给出了不同的答案」——
+      有的几乎重合，有的正面冲突。重合处不必惊喜，冲突处才有的看。
+    </p>
+    <div class="dg-toc" id="toc"></div>
+  </div>
+
+  <div id="list" class="dg-list"></div>
+</main>
+
+<footer class="foot">
+  <span>哲学图书馆 · 十组对话</span>
+  <span>引文均有出处；对照为编者所做，非史学意义上的影响考据。</span>
+  <a href="https://github.com/lvzhongpei/philosophy-library" target="_blank" rel="noopener">GITHUB ↗</a>
+</footer>
+
+<script src="js/starfield.js"></script>
+<script src="js/dialogue.js"></script>
+</body>
+</html>
