@@ -47,8 +47,8 @@
     var X0 = narrow ? 0.16 : 0.1;
     var X1 = narrow ? 0.84 : 0.9;
     var many = ps.length > 12;
-    var Y0 = narrow ? 0.11 : many ? 0.15 : 0.2;
-    var Y1 = narrow ? 0.88 : many ? 0.85 : 0.78;
+    var Y0 = narrow ? 0.11 : many ? 0.25 : 0.2;
+    var Y1 = narrow ? 0.88 : many ? 0.87 : 0.78;
 
     function px(x) {
       var k = maxX === minX ? 0.5 : (x - minX) / (maxX - minX);

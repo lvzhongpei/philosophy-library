@@ -18,6 +18,7 @@
     huineng: "#d4a05e",
     wangyangming: "#e6c072",
     hanfei: "#b8843f",
+    zhuxi: "#cf9b45",
     // 西方
     socrates: "#4fd1c5",
     plato: "#46b8c9",
@@ -32,12 +33,17 @@
     nietzsche: "#e07a9a",
     heidegger: "#c98fb0",
     camus: "#b98ba8",
-    wittgenstein: "#a8c8ff"
+    wittgenstein: "#a8c8ff",
+    plotinus: "#86b8d0",
+    locke: "#7fb0c8",
+    hegel: "#8f86d8",
+    marx: "#b07fa8",
+    sartre: "#d08fb8"
   };
 
   var EAST = {
     laozi: 1, confucius: 1, zhuangzi: 1,
-    mengzi: 1, xunzi: 1, huineng: 1, wangyangming: 1, hanfei: 1
+    mengzi: 1, xunzi: 1, huineng: 1, wangyangming: 1, hanfei: 1, zhuxi: 1
   };
 
   var wrapEl = document.querySelector(".canvas-wrap");
@@ -335,9 +341,10 @@
       if (dim2 || litAmt(m.d.phi) < 0.15) continue;
       // 窄屏只显示主干节点，避免文字挤成一团
       var must = state.sel === q || state.hover === q || (fs && fs[q]);
+      var needDeg = nodes.length > 120 ? 4 : nodes.length > 80 ? 3 : 0;
       if (!must && !showAll && m.deg < 4) continue;
       // 节点很多时只标主干，否则文字糊成一团
-      if (!must && nodes.length > 80 && m.deg < 3) continue;
+      if (!must && needDeg && m.deg < needDeg) continue;
       var alpha = must ? 0.95 : foc ? (dense ? 0.62 : 0.86) : 0.22;
       ctx.save();
       ctx.shadowColor = "rgba(4,6,11,0.95)";

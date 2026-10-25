@@ -10,31 +10,39 @@
       "id": "preqin",
       "name": "先秦",
       "en": "PRE-QIN",
-      "span": "前 6 — 前 3 世纪",
-      "x": 8,
-      "y": 14
+      "span": "前 6 世纪",
+      "x": 5,
+      "y": 12
     },
     {
       "id": "warring",
       "name": "战国儒家",
       "en": "CONFUCIAN",
       "span": "前 4 — 前 3 世纪",
-      "x": 21,
-      "y": 12
+      "x": 14,
+      "y": 10
     },
     {
       "id": "legalist",
       "name": "法家",
       "en": "LEGALISM",
       "span": "前 3 世纪",
-      "x": 29,
-      "y": 12
+      "x": 21,
+      "y": 10
     },
     {
       "id": "greek",
       "name": "古希腊",
       "en": "CLASSICAL GREECE",
       "span": "前 5 — 前 4 世纪",
+      "x": 29,
+      "y": 10
+    },
+    {
+      "id": "late",
+      "name": "古代晚期",
+      "en": "LATE ANTIQUITY",
+      "span": "3 世纪",
       "x": 38,
       "y": 10
     },
@@ -43,15 +51,23 @@
       "name": "唐代禅宗",
       "en": "CHAN",
       "span": "7 — 8 世纪",
-      "x": 47,
-      "y": 12
+      "x": 45,
+      "y": 10
+    },
+    {
+      "id": "song",
+      "name": "宋代理学",
+      "en": "NEO-CONFUCIAN",
+      "span": "12 世纪",
+      "x": 52,
+      "y": 10
     },
     {
       "id": "medieval",
       "name": "中世纪",
       "en": "MEDIEVAL",
       "span": "4 — 13 世纪",
-      "x": 54,
+      "x": 58,
       "y": 10
     },
     {
@@ -59,8 +75,8 @@
       "name": "明代心学",
       "en": "MING",
       "span": "15 — 16 世纪",
-      "x": 62,
-      "y": 12
+      "x": 64,
+      "y": 10
     },
     {
       "id": "early",
@@ -68,6 +84,14 @@
       "en": "EARLY MODERN",
       "span": "17 — 18 世纪",
       "x": 76,
+      "y": 10
+    },
+    {
+      "id": "german",
+      "name": "德国古典",
+      "en": "GERMAN IDEALISM",
+      "span": "18 — 19 世纪",
+      "x": 84,
       "y": 10
     },
     {
@@ -83,8 +107,8 @@
       "name": "分析哲学",
       "en": "ANALYTIC",
       "span": "20 世纪",
-      "x": 96,
-      "y": 30
+      "x": 97,
+      "y": 34
     }
   ],
   "links": [
@@ -150,8 +174,14 @@
     },
     {
       "a": "plato",
+      "b": "plotinus",
+      "label": "理念的流溢化",
+      "style": "solid"
+    },
+    {
+      "a": "plotinus",
       "b": "augustine",
-      "label": "理念进入神学",
+      "label": "太一进入神学",
       "style": "solid"
     },
     {
@@ -167,9 +197,33 @@
       "style": "solid"
     },
     {
+      "a": "mengzi",
+      "b": "zhuxi",
+      "label": "道统所系",
+      "style": "solid"
+    },
+    {
+      "a": "zhuxi",
+      "b": "wangyangming",
+      "label": "性即理 ↔ 心即理",
+      "style": "dashed"
+    },
+    {
       "a": "descartes",
       "b": "spinoza",
       "label": "继承与拒绝",
+      "style": "solid"
+    },
+    {
+      "a": "descartes",
+      "b": "locke",
+      "label": "天赋观念之争",
+      "style": "dashed"
+    },
+    {
+      "a": "locke",
+      "b": "hume",
+      "label": "经验论",
       "style": "solid"
     },
     {
@@ -186,8 +240,20 @@
     },
     {
       "a": "kant",
+      "b": "hegel",
+      "label": "德国古典登顶",
+      "style": "solid"
+    },
+    {
+      "a": "hegel",
       "b": "schopenhauer",
-      "label": "自在之物转为意志",
+      "label": "一对冤家",
+      "style": "dashed"
+    },
+    {
+      "a": "hegel",
+      "b": "marx",
+      "label": "颠倒过来",
       "style": "solid"
     },
     {
@@ -204,8 +270,14 @@
     },
     {
       "a": "heidegger",
+      "b": "sartre",
+      "label": "存在主义",
+      "style": "solid"
+    },
+    {
+      "a": "sartre",
       "b": "camus",
-      "label": "同一片战后废墟",
+      "label": "并肩与决裂",
       "style": "dashed"
     },
     {
@@ -234,7 +306,10 @@
         "substance",
         "twocities",
         "substance1",
-        "family"
+        "family",
+        "the_one",
+        "li_fenshu",
+        "absolute_spirit"
       ]
     },
     {
@@ -409,7 +484,8 @@
       "desc": "天理不在竹子上，在心里。心外无理，心外无事。",
       "links": [
         "liangzhi",
-        "zhixing"
+        "zhixing",
+        "xing_li"
       ]
     },
     {
@@ -442,7 +518,8 @@
         "imperative",
         "xingshan",
         "jianxing",
-        "no_trust"
+        "no_trust",
+        "li_qi"
       ]
     },
     {
@@ -498,7 +575,8 @@
         "phenomena",
         "lijie",
         "twowills",
-        "substance1"
+        "substance1",
+        "alienation"
       ]
     },
     {
@@ -512,7 +590,8 @@
         "aesthetic",
         "cogito",
         "dualism",
-        "phenomena"
+        "phenomena",
+        "qualities"
       ]
     },
     {
@@ -537,7 +616,8 @@
         "will_negation",
         "porcupine",
         "shu",
-        "person"
+        "person",
+        "shu_legal"
       ]
     },
     {
@@ -577,7 +657,8 @@
         "pity",
         "pendulum",
         "will",
-        "freedom_know"
+        "freedom_know",
+        "return"
       ]
     },
     {
@@ -705,7 +786,8 @@
         "phil_suicide",
         "nihilism",
         "recurrence",
-        "beingtoward"
+        "beingtoward",
+        "engagement"
       ]
     },
     {
@@ -836,7 +918,8 @@
         "shu",
         "liangzhi",
         "siduan",
-        "renzheng"
+        "renzheng",
+        "shu_legal"
       ]
     },
     {
@@ -1046,7 +1129,9 @@
       "links": [
         "cogito",
         "phenomena",
-        "analogy"
+        "analogy",
+        "ideology",
+        "ideas_innate"
       ]
     },
     {
@@ -1112,7 +1197,8 @@
         "liangzhi",
         "grace",
         "natural_law",
-        "is_ought"
+        "is_ought",
+        "contract"
       ]
     },
     {
@@ -1124,7 +1210,8 @@
       "links": [
         "imperative",
         "pity",
-        "twocities"
+        "twocities",
+        "contract"
       ]
     },
     {
@@ -1243,7 +1330,8 @@
       "links": [
         "dunwu",
         "liangzhi",
-        "shijian"
+        "shijian",
+        "gewu"
       ]
     },
     {
@@ -1299,7 +1387,8 @@
       "desc": "意志已伤，人靠自己爬不出来。",
       "links": [
         "twowills",
-        "imperative"
+        "imperative",
+        "privation"
       ]
     },
     {
@@ -1431,7 +1520,8 @@
       "desc": "向内找那个「我」，只找到一束不断更替的知觉。",
       "links": [
         "zuowang",
-        "cogito"
+        "cogito",
+        "personal_id"
       ]
     },
     {
@@ -1466,7 +1556,9 @@
         "beingworld",
         "beingtoward",
         "cogito",
-        "ready_hand"
+        "ready_hand",
+        "existence",
+        "the_other"
       ]
     },
     {
@@ -1620,6 +1712,308 @@
         "zhengming",
         "bild"
       ]
+    },
+    {
+      "id": "the_one",
+      "name": "太一",
+      "en": "τὸ ἕν",
+      "phi": "plotinus",
+      "desc": "连「存在」都不能说它。只能通过「不是什么」接近。",
+      "links": [
+        "emanation",
+        "return",
+        "eidos"
+      ]
+    },
+    {
+      "id": "emanation",
+      "name": "流溢",
+      "en": "πρόοδος",
+      "phi": "plotinus",
+      "desc": "不是创造，是溢出。太一像太阳一样发光，越远越弱。",
+      "links": [
+        "the_one",
+        "return",
+        "privation"
+      ]
+    },
+    {
+      "id": "return",
+      "name": "回归",
+      "en": "ἐπιστροφή",
+      "phi": "plotinus",
+      "desc": "每一层既向外溢，又向内望。回去的路就是来的路。",
+      "links": [
+        "the_one",
+        "emanation",
+        "will_negation"
+      ]
+    },
+    {
+      "id": "privation",
+      "name": "恶是缺乏",
+      "en": "στέρησις",
+      "phi": "plotinus",
+      "desc": "恶没有实体，它寄生在善的缺损上。",
+      "links": [
+        "emanation",
+        "grace"
+      ]
+    },
+    {
+      "id": "li_qi",
+      "name": "理气",
+      "en": "理氣",
+      "phi": "zhuxi",
+      "desc": "理是所以然，气是所当然。二者不离，论本原则理先。",
+      "links": [
+        "gewu",
+        "li_fenshu",
+        "liangzhi",
+        "xing_li"
+      ]
+    },
+    {
+      "id": "li_fenshu",
+      "name": "理一分殊",
+      "en": "理一分殊",
+      "phi": "zhuxi",
+      "desc": "月只有一个，江湖各映一轮——每一片水面都完整地映着它。",
+      "links": [
+        "li_qi",
+        "gewu",
+        "eidos"
+      ]
+    },
+    {
+      "id": "gewu",
+      "name": "格物穷理",
+      "en": "格物窮理",
+      "phi": "zhuxi",
+      "desc": "即物而穷其理。路是加法：今日一格，明日一格。",
+      "links": [
+        "li_qi",
+        "jianxing",
+        "li_fenshu"
+      ]
+    },
+    {
+      "id": "xing_li",
+      "name": "性即理",
+      "en": "性即理",
+      "phi": "zhuxi",
+      "desc": "在心唤作性，在事唤作理。与「心即理」正是对撞。",
+      "links": [
+        "li_qi",
+        "xinli"
+      ]
+    },
+    {
+      "id": "blank_slate",
+      "name": "白板",
+      "en": "tabula rasa",
+      "phi": "locke",
+      "desc": "心灵最初什么也没有，一切观念来自感觉与反省。",
+      "links": [
+        "qualities",
+        "ideas_innate",
+        "personal_id"
+      ]
+    },
+    {
+      "id": "qualities",
+      "name": "两种性质",
+      "en": "primary / secondary",
+      "phi": "locke",
+      "desc": "形状在物里，颜色在眼睛里。",
+      "links": [
+        "blank_slate",
+        "representation"
+      ]
+    },
+    {
+      "id": "personal_id",
+      "name": "人格同一性",
+      "en": "personal identity",
+      "phi": "locke",
+      "desc": "「我」之所以是我，靠的是意识的连续性，不是同一个身体。",
+      "links": [
+        "blank_slate",
+        "bundle"
+      ]
+    },
+    {
+      "id": "contract",
+      "name": "契约政府",
+      "en": "social contract",
+      "phi": "locke",
+      "desc": "政府是受托人，不是父君。违约则人民可收回。",
+      "links": [
+        "imperative",
+        "person"
+      ]
+    },
+    {
+      "id": "dialectic",
+      "name": "辩证法",
+      "en": "Dialektik",
+      "phi": "hegel",
+      "desc": "矛盾不是错误，是发动机。正反合，扬弃而不取消。",
+      "links": [
+        "absolute_spirit",
+        "historical_materialism",
+        "master_slave",
+        "cunning"
+      ]
+    },
+    {
+      "id": "master_slave",
+      "name": "主奴辩证法",
+      "en": "Herr und Knecht",
+      "phi": "hegel",
+      "desc": "谁被承认，谁才成为人。而承认来自奴隶，所以主人是空的。",
+      "links": [
+        "dialectic",
+        "alienation"
+      ]
+    },
+    {
+      "id": "absolute_spirit",
+      "name": "绝对精神",
+      "en": "absoluter Geist",
+      "phi": "hegel",
+      "desc": "不是神，是那个通过历史认识自身的整体。",
+      "links": [
+        "dialectic",
+        "eidos"
+      ]
+    },
+    {
+      "id": "cunning",
+      "name": "理性的狡黠",
+      "en": "List der Vernunft",
+      "phi": "hegel",
+      "desc": "历史借个人的激情实现自己的目的。",
+      "links": [
+        "dialectic",
+        "historical_materialism"
+      ]
+    },
+    {
+      "id": "alienation",
+      "name": "异化劳动",
+      "en": "entfremdete Arbeit",
+      "phi": "marx",
+      "desc": "你造的东西，最后站到你对面。",
+      "links": [
+        "master_slave",
+        "fetishism",
+        "will"
+      ]
+    },
+    {
+      "id": "historical_materialism",
+      "name": "历史唯物主义",
+      "en": "historischer Materialismus",
+      "phi": "marx",
+      "desc": "不是意识决定存在，是社会存在决定意识。",
+      "links": [
+        "dialectic",
+        "base_super",
+        "cunning",
+        "ideology"
+      ]
+    },
+    {
+      "id": "base_super",
+      "name": "基础与上层",
+      "en": "Basis / Überbau",
+      "phi": "marx",
+      "desc": "生产力与生产关系是地基，法律宗教艺术是上层。",
+      "links": [
+        "historical_materialism",
+        "ideology"
+      ]
+    },
+    {
+      "id": "fetishism",
+      "name": "商品拜物教",
+      "en": "Warenfetischismus",
+      "phi": "marx",
+      "desc": "人和人的关系，伪装成物和物的关系。",
+      "links": [
+        "alienation",
+        "ideology"
+      ]
+    },
+    {
+      "id": "ideology",
+      "name": "意识形态",
+      "en": "Ideologie",
+      "phi": "marx",
+      "desc": "你不知道自己在为谁说话——而这正是它有效的原因。",
+      "links": [
+        "historical_materialism",
+        "fetishism",
+        "clarity",
+        "base_super"
+      ]
+    },
+    {
+      "id": "existence",
+      "name": "存在先于本质",
+      "en": "l'existence précède l'essence",
+      "phi": "sartre",
+      "desc": "先有这个人，才有「他是谁」。没有预先给定的人性。",
+      "links": [
+        "bad_faith",
+        "dasein",
+        "engagement"
+      ]
+    },
+    {
+      "id": "bad_faith",
+      "name": "自欺",
+      "en": "mauvaise foi",
+      "phi": "sartre",
+      "desc": "把自己当成一件有固定本质的物，好逃开「我还可以不是」。",
+      "links": [
+        "existence",
+        "the_other"
+      ]
+    },
+    {
+      "id": "the_other",
+      "name": "凝视",
+      "en": "le regard",
+      "phi": "sartre",
+      "desc": "他人的注视把我从主体变成对象，可能性被冻住。",
+      "links": [
+        "bad_faith",
+        "dasein"
+      ]
+    },
+    {
+      "id": "engagement",
+      "name": "介入",
+      "en": "engagement",
+      "phi": "sartre",
+      "desc": "写作也是一种行动。沉默也是立场。",
+      "links": [
+        "existence",
+        "absurd"
+      ]
+    },
+    {
+      "id": "ideas_innate",
+      "name": "天赋观念",
+      "en": "ideae innatae",
+      "phi": "descartes",
+      "desc": "有些观念与生俱来，不待经验——洛克要驳的正是这一条。",
+      "links": [
+        "clarity",
+        "blank_slate"
+      ]
     }
   ],
   "philosophers": [
@@ -1634,8 +2028,8 @@
       "school": "道家",
       "schoolEn": "Daoism",
       "cluster": "preqin",
-      "x": 5,
-      "y": 58,
+      "x": 4.0,
+      "y": 28,
       "color": "#e0a458",
       "oneLine": "道可道，非常道。",
       "device": "laozi-void",
@@ -1788,8 +2182,8 @@
       "school": "儒家",
       "schoolEn": "Confucianism",
       "cluster": "preqin",
-      "x": 9,
-      "y": 32,
+      "x": 7.5,
+      "y": 54,
       "color": "#e0a458",
       "oneLine": "己所不欲，勿施于人。",
       "device": "confucius-circle",
@@ -1946,8 +2340,8 @@
       "school": "辩证法 · 伦理转向",
       "schoolEn": "Socratic Method",
       "cluster": "greek",
-      "x": 34,
-      "y": 20,
+      "x": 11.0,
+      "y": 78,
       "color": "#4fd1c5",
       "oneLine": "未经省察的人生不值得过。",
       "worksNote": "苏格拉底本人不著一字。下面这些都不是他的作品，而是别人写的他——其中柏拉图的记述最有文学性，也最难分辨哪一句属于苏格拉底、哪一句属于柏拉图本人。",
@@ -2107,8 +2501,8 @@
       "school": "理念论",
       "schoolEn": "Platonism",
       "cluster": "greek",
-      "x": 38,
-      "y": 50,
+      "x": 14.6,
+      "y": 29,
       "color": "#4fd1c5",
       "oneLine": "我们所见的，只是火光投在墙上的影子。",
       "device": "plato-cave",
@@ -2266,8 +2660,8 @@
       "school": "逍遥学派 · 实体论",
       "schoolEn": "Peripatetic",
       "cluster": "greek",
-      "x": 42,
-      "y": 74,
+      "x": 18.1,
+      "y": 55,
       "color": "#4fd1c5",
       "oneLine": "求知是人类的本性。",
       "device": "aristotle-mean",
@@ -2436,8 +2830,8 @@
       "school": "儒家 · 性善论",
       "schoolEn": "Confucianism",
       "cluster": "warring",
-      "x": 19,
-      "y": 38,
+      "x": 21.6,
+      "y": 74,
       "color": "#e0a458",
       "oneLine": "人皆有不忍人之心。",
       "device": "mengzi-sprouts",
@@ -2589,8 +2983,8 @@
       "school": "道家",
       "schoolEn": "Daoism",
       "cluster": "preqin",
-      "x": 14,
-      "y": 64,
+      "x": 25.1,
+      "y": 30,
       "color": "#e0a458",
       "oneLine": "不知周之梦为胡蝶与，胡蝶之梦为周与？",
       "device": "zhuangzi-butterfly",
@@ -2750,8 +3144,8 @@
       "school": "儒家 · 性恶论",
       "schoolEn": "Confucianism",
       "cluster": "warring",
-      "x": 24,
-      "y": 68,
+      "x": 28.6,
+      "y": 56,
       "color": "#e0a458",
       "oneLine": "人之性恶，其善者伪也。",
       "device": "xunzi-bend",
@@ -2910,8 +3304,8 @@
       "school": "法家 · 法术势",
       "schoolEn": "Legalism",
       "cluster": "legalist",
-      "x": 29,
-      "y": 42,
+      "x": 32.1,
+      "y": 75,
       "color": "#e0a458",
       "oneLine": "不恃人之为吾善也，而恃其不得为非。",
       "device": "hanfei-tripod",
@@ -3061,6 +3455,165 @@
       "device2Desc": "拖动「世」——时代变了，田里的兔子没了。农夫还守着那个树桩。"
     },
     {
+      "id": "plotinus",
+      "name": "普罗提诺",
+      "en": "Plotinus",
+      "orig": "Πλωτῖνος",
+      "years": "204 — 270",
+      "born": 204,
+      "era": "古代晚期",
+      "school": "新柏拉图主义",
+      "schoolEn": "Neoplatonism",
+      "cluster": "late",
+      "color": "#4fd1c5",
+      "oneLine": "一切存在者，都因为「太一」而存在。",
+      "device": "plotinus-emanation",
+      "deviceTitle": "流溢",
+      "deviceDesc": "一个光源。离它越远，光越弱——理智、灵魂、物质，都是它溢出来的。",
+      "deviceHint": "流溢不是创造：太一没有「决定」造世界，它像太阳一样，只是发光。",
+      "device2": "plotinus-return",
+      "device2Title": "回归",
+      "bio": [
+        {
+          "y": "204",
+          "t": "生于埃及吕科波利斯。二十八岁才决意学哲学，在亚历山大听了十几个老师都不满意，被人带去见阿摩尼乌斯，出来说：「我要找的就是他。」"
+        },
+        {
+          "y": "232",
+          "t": "随阿摩尼乌斯学了十一年。此前他当过兵、做过买卖，都失败。"
+        },
+        {
+          "y": "243",
+          "t": "加入戈尔迪安三世的远征军，想借道波斯去接触印度与波斯的哲人。军队在美索不达米亚被击败，皇帝被杀，他狼狈逃回安条克。"
+        },
+        {
+          "y": "244",
+          "t": "赴罗马，开馆授徒。学生里有元老、有医生、有妇女与孤儿——他把孤儿接回家教养。皇帝加里恩努斯夫妇都来听。"
+        },
+        {
+          "y": "254",
+          "t": "五十岁才开始动笔。此前二十年只讲不写——他说，写下来的东西没办法回答你。"
+        },
+        {
+          "y": "268",
+          "t": "请求皇帝在坎帕尼亚建一座「柏拉图城」，让居民按《理想国》生活。宫廷有人反对，事遂寝。"
+        },
+        {
+          "y": "270",
+          "t": "病死于坎帕尼亚的庄园。据说临终说：「我要把身上这一点神性，还给它该去的地方。」他的学生波菲利把遗稿编成六集、每集九篇，即《九章集》。"
+        }
+      ],
+      "positioning": {
+        "text": "他是古代哲学的最后一位大体系家，也是把柏拉图交给中世纪的那只手。柏拉图有两个世界，他没说两者怎么连；普罗提诺给出了机制：流溢。于是理念成了「理智」的内容，灵魂成了下一层，物质是光最弱的地方。奥古斯丁读了他的拉丁译本，说这才让「道」的问题有了着落。",
+        "upstream": [
+          "柏拉图",
+          "亚里士多德",
+          "斯多亚学派",
+          "阿摩尼乌斯"
+        ],
+        "downstream": [
+          "波菲利",
+          "奥古斯丁",
+          "伪狄奥尼修斯",
+          "爱留根纳",
+          "文艺复兴柏拉图主义"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "太一",
+          "orig": "τὸ ἕν",
+          "brief": "连「存在」都不能说它。",
+          "detail": "太一不是「最高的存在者」，因为一旦说它是存在者，就把它放进了存在的范畴里，就有了规定，就有了边界。所以他只能说：太一超越存在、超越思想、超越善。你只能通过「不是什么」来接近它。这一套否定神学，此后统治了西方神秘主义一千年。"
+        },
+        {
+          "title": "流溢",
+          "orig": "πρόοδος",
+          "brief": "不是创造，是溢出。",
+          "detail": "太一不「决定」造世界——它没有意志，也没有计划。它像太阳一样发光，光离开它就越弱：最近的是理智（理念所在），其次是灵魂，最远是物质——那几乎是全暗的边角。「创造」暗示一个造物者，流溢暗示一种必然的丰盈。"
+        },
+        {
+          "title": "回归",
+          "orig": "ἐπιστροφή",
+          "brief": "来的路，也是回去的路。",
+          "detail": "每一层存在都既向外溢，又向内望。灵魂的本质不是堕落，是「看向两边」：向下它经营身体与世界，向上它可以一步步收回自己，最后在「狂喜」（ἔκστασις）中与太一合一。那一瞬没有主客之分，也没有话可说。"
+        },
+        {
+          "title": "恶是缺乏",
+          "orig": "στέρησις",
+          "brief": "恶没有实体。",
+          "detail": "物质不是「邪恶的力量」，而是光的缺席。恶没有自己的存在，它寄生在善的缺损上。这一条后来被奥古斯丁直接继承，用来回答那个折磨了他九年的问题：如果神是善的，恶从哪来。"
+        },
+        {
+          "title": "美是召唤",
+          "orig": "κάλλος",
+          "brief": "我们爱美，是因为想回去。",
+          "detail": "《九章集》第一卷第六篇论美：灵魂在看到美的时候会战栗、渴望，因为它认出了自己的故乡。所以审美不是消遣，是归途的第一段。他说：把眼睛向内转，看——如果还不够美，就像雕刻家凿石像一样，凿掉多余的部分。"
+        }
+      ],
+      "works": [
+        {
+          "title": "九章集",
+          "orig": "Ἐννεάδες",
+          "year": "约 300（波菲利编）",
+          "gist": "五十四篇，分六集。西方形而上学最严密也最难读的一部之一。"
+        },
+        {
+          "title": "论美",
+          "orig": "Περὶ τοῦ καλοῦ",
+          "year": "—",
+          "gist": "第一集第六篇。凿石像的比喻在此。"
+        },
+        {
+          "title": "论三本原",
+          "orig": "Περὶ τῶν τριῶν ἀρχικῶν ὑποστάσεων",
+          "year": "—",
+          "gist": "第五集第一篇。太一、理智、灵魂的三层结构。"
+        },
+        {
+          "title": "波菲利《普罗提诺传》",
+          "orig": "Περὶ τοῦ Πλωτίνου βίου",
+          "year": "约 301",
+          "gist": "学生写的传记。我们关于他生平的几乎全部材料都来自这本小书。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "太一超越存在，超越思想，甚至超越善。",
+          "orig": "ἐπέκεινα τῆς οὐσίας",
+          "src": "《九章集》V.2.1 等处",
+          "note": "「超越存在」（ἐπέκεινα τῆς οὐσίας）本是柏拉图《理想国》509b 说善的理念的话，普罗提诺把它给了太一。"
+        },
+        {
+          "cn": "一切存在者都因太一而存在，那些被称作「多」的东西，靠分有它才成为存在。",
+          "orig": "πάντα τὰ ὄντα τῷ ἑνὶ ὄντα ἐστίν",
+          "src": "《九章集》V.2.1",
+          "note": "这句是整套体系的枢纽：多之所以能存在，是因为分有了「一」。"
+        },
+        {
+          "cn": "灵魂的飞行：独自飞向那独自者。",
+          "orig": "φυγὴ μόνου πρὸς μόνον",
+          "src": "《九章集》I.6.7",
+          "note": "据波菲利记载，这是普罗提诺临终对他说的话。六个希腊词，西方神秘主义的座右铭。"
+        },
+        {
+          "cn": "把眼睛向内转，去看。若还不够美，就像雕刻家那样，凿掉多余的部分。",
+          "orig": "ὥσπερ ἀνδριάντα ποιῶν",
+          "src": "《九章集》I.6.9",
+          "note": "他不是在讲修身，是在讲认识论：认识太一的第一步是删减，不是增加。"
+        }
+      ],
+      "questions": [
+        "如果太一连「存在」都不能说，那说「它存在」是不是已经在说谎？",
+        "流溢是必然的，那世界就没有被「选择」过——这还算创造吗？",
+        "「恶是缺乏」听起来很干净，可一个母亲看着孩子病死时，这话还站得住吗？"
+      ],
+      "x": 35.7,
+      "y": 31,
+      "device2Desc": "灵魂向上回望。越往上，能说的越少，直到只剩一个光点。",
+      "device2Hint": "「独自飞向那独自者。」这是他写给最亲近的学生的最后的话。"
+    },
+    {
       "id": "augustine",
       "name": "奥古斯丁",
       "en": "Augustine",
@@ -3071,8 +3624,8 @@
       "school": "教父哲学 · 柏拉图主义",
       "schoolEn": "Patristics",
       "cluster": "medieval",
-      "x": 53,
-      "y": 62,
+      "x": 39.2,
+      "y": 52,
       "color": "#4fd1c5",
       "oneLine": "时间是什么？没人问我，我知道。",
       "device": "augustine-time",
@@ -3231,8 +3784,8 @@
       "school": "禅宗 · 南宗",
       "schoolEn": "Chan Buddhism",
       "cluster": "chan",
-      "x": 48,
-      "y": 36,
+      "x": 42.7,
+      "y": 76,
       "color": "#e0a458",
       "oneLine": "菩提本无树，明镜亦非台。",
       "device": "huineng-sudden",
@@ -3369,6 +3922,172 @@
       "device2Desc": "一面旗在动。是风动？是幡动？——点第三个答案试试。"
     },
     {
+      "id": "zhuxi",
+      "name": "朱熹",
+      "en": "Zhu Xi",
+      "orig": "朱熹 · 元晦",
+      "years": "1130 — 1200",
+      "born": 1130,
+      "era": "南宋",
+      "school": "理学 · 程朱学派",
+      "schoolEn": "Neo-Confucianism",
+      "cluster": "song",
+      "color": "#e0a458",
+      "oneLine": "即物而穷其理，至于用力之久，而一旦豁然贯通。",
+      "device": "zhuxi-gewu",
+      "deviceTitle": "格物穷理",
+      "deviceDesc": "一格一格地格。格到足够多的时候，会突然贯通——那一刻不是想通的，是积累到的。",
+      "deviceHint": "「众物之表里精粗无不到，而吾心之全体大用无不明。」他的路是加法，不是减法。",
+      "device2": "zhuxi-moon",
+      "device2Title": "月印万川",
+      "device2Hint": "「理一分殊」——理只有一个，事事物物各得其一，像每片水面各自完整地映着那同一个月。",
+      "bio": [
+        {
+          "y": "1130",
+          "t": "生于福建尤溪。父朱松是抗金派官员。十四岁丧父，临终托付给胡宪、刘勉之、刘子翚三位友人。"
+        },
+        {
+          "y": "1148",
+          "t": "十九岁中进士。此后五十年，做官合计不到十年，其余时间在讲学与著书。"
+        },
+        {
+          "y": "1160",
+          "t": "正式师从李侗（延平）。李侗教他「默坐澄心，体认天理」，这是他从禅学转向理学的关节。"
+        },
+        {
+          "y": "1175",
+          "t": "鹅湖寺与陆九渊辩论三日。朱熹主张「泛观博览而后归之约」，陆主张「先发明本心」。谁也没说服谁，成为中国思想史上最著名的一次不欢而散。"
+        },
+        {
+          "y": "1181",
+          "t": "知南康军，修复白鹿洞书院，手订学规。次年陆九渊来讲学，讲「君子喻于义」，朱熹请他留在碑上。"
+        },
+        {
+          "y": "1196",
+          "t": "庆元党禁。他的学说被斥为「伪学」，落职罢祠，门人流放。他仍在改《大学章句》。"
+        },
+        {
+          "y": "1200",
+          "t": "卒于建阳考亭，年七十一。九年后被平反，此后七百年，《四书章句集注》是科举的唯一标准。"
+        }
+      ],
+      "positioning": {
+        "text": "他把佛教的形而上野心搬回儒学，又用「理」把天、人、物串成一套可以逐格检查的系统。他的路是加法：今日格一物，明日格一物，积久贯通。王阳明正是从这条路上退出来的人——王格了七天竹子病倒，从此不信「理在物上」。这两人的对立，构成了此后五百年的中国思想史。",
+        "upstream": [
+          "孔子",
+          "孟子",
+          "周敦颐",
+          "二程（程颢 · 程颐）",
+          "张载"
+        ],
+        "downstream": [
+          "朱熹学",
+          "王阳明（作为对手）",
+          "朝鲜性理学",
+          "日本朱子学",
+          "科举制度"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "理气论",
+          "orig": "理氣",
+          "brief": "理是所以然，气是所当然。",
+          "detail": "「天下未有无理之气，亦未有无气之理。」理不是另一个东西，它是一物之所以为此物的根据；气是构成它的材料。二者不分先后——但论「本原」时，他说理在气先。这个「先」是逻辑的，不是时间的，他反复解释，还是被后儒骂了八百年。"
+        },
+        {
+          "title": "理一分殊",
+          "orig": "理一分殊",
+          "brief": "月只有一个，江湖各映一轮。",
+          "detail": "太极只有一个，但事事物物各具一太极。不是把一个月亮切成一千块，而是每一片水面都完整地映着它。所以君臣、父子、夫妇各有其理，理却是同一个。这是他用来接住「万物一体」与「差等之爱」的枢纽。"
+        },
+        {
+          "title": "格物穷理",
+          "orig": "格物窮理",
+          "brief": "去事物上穷它的理，穷到贯通。",
+          "detail": "「所谓致知在格物者，言欲致吾之知，在即物而穷其理也。」他给《大学》补了一段「格物致知传」，一百三十四字，此后成了争议的焦点。关键在「即物」：理在物上，不在心里。这一句就是王阳明要拆的那一句。"
+        },
+        {
+          "title": "性即理",
+          "orig": "性即理",
+          "brief": "人的本性，就是天理。",
+          "detail": "「性即理也，在心唤作性，在事唤作理。」这句话让天理有了可讨论的落点：它不在天上，而在人的性分里。但「性」是天赋的、未发的，「情」是已发的——所以修养的工夫在「已发未发之间」，在「存天理，去人欲」。"
+        },
+        {
+          "title": "读书法",
+          "orig": "讀書法",
+          "brief": "他的哲学是可以用日程表执行的。",
+          "detail": "「循序而渐进，熟读而精思。」他给每一部经典规定了读法、次序、遍数。这套东西后来成了东亚读书人的共同习惯——也成了被讥为「支离」的把柄：路太长，人容易死在半路上。"
+        }
+      ],
+      "works": [
+        {
+          "title": "四书章句集注",
+          "orig": "四書章句集注",
+          "year": "1190",
+          "gist": "《大学》《中庸》《论语》《孟子》的注本。六百多年科举的标准答案。"
+        },
+        {
+          "title": "朱子语类",
+          "orig": "朱子語類",
+          "year": "1270 编",
+          "gist": "门人记录的语录，一百四十卷。最鲜活的那个朱熹在这里。"
+        },
+        {
+          "title": "近思录",
+          "orig": "近思錄",
+          "year": "1175",
+          "gist": "与吕祖谦合编，周敦颐、二程、张载的语录选。理学的入门书。"
+        },
+        {
+          "title": "诗集传",
+          "orig": "詩集傳",
+          "year": "—",
+          "gist": "《诗经》注本。他敢说「郑风」多是淫诗，在当时相当大胆。"
+        },
+        {
+          "title": "通鉴纲目",
+          "orig": "資治通鑑綱目",
+          "year": "—",
+          "gist": "据司马光《资治通鉴》改写，以「纲目」定褒贬。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "天下未有无理之气，亦未有无气之理。",
+          "orig": "天下未有無理之氣，亦未有無氣之理。",
+          "src": "《朱子语类》卷一",
+          "note": "紧接着他说「理未尝离乎气」，但「以本体言之，则有是理然后有是气」——两句话之间的张力，是后人争了八百年的地方。"
+        },
+        {
+          "cn": "所谓致知在格物者，言欲致吾之知，在即物而穷其理也。",
+          "orig": "所謂致知在格物者，言欲致吾之知，在即物而窮其理也。",
+          "src": "《大学章句 · 补格物致知传》",
+          "note": "这一百三十四字是他替《大学》补写的。王阳明说整部《大学》的歧义都从这里开始。"
+        },
+        {
+          "cn": "问渠那得清如许，为有源头活水来。",
+          "orig": "問渠那得清如許，為有源頭活水來。",
+          "src": "《观书有感》",
+          "note": "写的是读书，说的是理：水清不是因为搅动，是因为有源头。"
+        },
+        {
+          "cn": "存天理，灭人欲。",
+          "orig": "存天理，滅人欲。",
+          "src": "《朱子语类》卷十三",
+          "note": "他说的「人欲」不是一切欲望，是「过分的、遮蔽天理的那部分」。这一句被后世简化得最厉害，也背了最多的骂名。"
+        }
+      ],
+      "questions": [
+        "如果理在万物上，为什么格了七天竹子会病倒？",
+        "「理一分殊」——每一片水面的月亮，真的是同一个吗？",
+        "他的路要格尽天下之物，可人一生的时间够格几件？"
+      ],
+      "x": 46.2,
+      "y": 32,
+      "device2Desc": "天上一个月亮，地上千条江水各映一个。拖动水面数量。"
+    },
+    {
       "id": "aquinas",
       "name": "阿奎那",
       "en": "Thomas Aquinas",
@@ -3379,8 +4098,8 @@
       "school": "经院哲学 · 托马斯主义",
       "schoolEn": "Scholasticism",
       "cluster": "medieval",
-      "x": 58,
-      "y": 34,
+      "x": 49.7,
+      "y": 53,
       "color": "#4fd1c5",
       "oneLine": "恩典不废除自然，而是成全它。",
       "device": "aquinas-five",
@@ -3537,8 +4256,8 @@
       "school": "心学",
       "schoolEn": "Xinxue / School of Mind",
       "cluster": "ming",
-      "x": 62,
-      "y": 56,
+      "x": 53.3,
+      "y": 77,
       "color": "#e0a458",
       "oneLine": "你未看此花时，此花与汝心同归于寂。",
       "device": "wangyangming-flower",
@@ -3700,8 +4419,8 @@
       "school": "理性主义",
       "schoolEn": "Rationalism",
       "cluster": "early",
-      "x": 68,
-      "y": 24,
+      "x": 56.8,
+      "y": 28,
       "color": "#4fd1c5",
       "oneLine": "我思，故我在。",
       "device": "descartes-doubt",
@@ -3873,8 +4592,8 @@
       "school": "理性主义 · 一元论",
       "schoolEn": "Rationalism",
       "cluster": "early",
-      "x": 72,
-      "y": 48,
+      "x": 60.3,
+      "y": 54,
       "color": "#4fd1c5",
       "oneLine": "神，或说自然。",
       "device": "spinoza-substance",
@@ -4019,6 +4738,175 @@
       "device2Desc": "一块会思考的石头被抛出去。它以为自己在飞，还是知道自己被抛？"
     },
     {
+      "id": "locke",
+      "name": "洛克",
+      "en": "John Locke",
+      "orig": "John Locke",
+      "years": "1632 — 1704",
+      "born": 1632,
+      "era": "近代",
+      "school": "经验论 · 自由主义",
+      "schoolEn": "Empiricism",
+      "cluster": "early",
+      "color": "#4fd1c5",
+      "oneLine": "心灵是一张白纸，上面没有一切字迹。",
+      "device": "locke-tablet",
+      "deviceTitle": "白板",
+      "deviceDesc": "一块空白的板。看一次，听一次，摸一次——痕迹是自己留下的，不是本来就有。",
+      "deviceHint": "他要反驳的是「天赋观念」：如果有些观念是生来就有的，那婴儿应该也会算数学。",
+      "device2": "locke-qualities",
+      "device2Title": "两种性质",
+      "device2Hint": "第一性质在物里，第二性质在感知里——这一步把「红」从世界挪进了眼睛。",
+      "bio": [
+        {
+          "y": "1632",
+          "t": "生于英格兰萨默塞特一个清教徒律师家庭。内战前夜，父亲站在议会一边参战。"
+        },
+        {
+          "y": "1652",
+          "t": "入牛津基督教会学院。他对当时的经院课程极其厌烦，转而迷上医学与实验科学，与波义耳交往。"
+        },
+        {
+          "y": "1666",
+          "t": "结识阿什利勋爵（后来的沙夫茨伯里伯爵），做他的医生、秘书、政治顾问。此后二十年，他的命运与这位辉格党领袖绑在一起。"
+        },
+        {
+          "y": "1668",
+          "t": "为一位病人做手术取出囊肿，病人活了下来——这件事让他当选皇家学会会员。"
+        },
+        {
+          "y": "1675",
+          "t": "赴法国养病，接触笛卡尔与伽桑狄的哲学。他后来那本《人类理解论》，最初就是与友人讨论这些问题时写下的。"
+        },
+        {
+          "y": "1683",
+          "t": "沙夫茨伯里失势逃亡，洛克受牵连，化名逃往荷兰，五年间频繁搬家躲避追捕。"
+        },
+        {
+          "y": "1689",
+          "t": "光荣革命后回国。次年《人类理解论》《政府论两篇》同时出版，都署的是出版年份 1690。"
+        },
+        {
+          "y": "1704",
+          "t": "卒于埃塞克斯。终身未婚。"
+        }
+      ],
+      "positioning": {
+        "text": "他把「观念从哪来」这个问题变成了经验论的全部地盘：没有天赋观念，一切知识都由感觉与反省拼装而成。这一步看似平淡，后果极大——它取消了知识的特权来源，也把「人人生而自由」从神学里解放出来，变成一句可以论证的政治命题。",
+        "upstream": [
+          "培根",
+          "霍布斯",
+          "伽桑狄",
+          "波义耳（实验科学）"
+        ],
+        "downstream": [
+          "贝克莱",
+          "休谟",
+          "法国启蒙",
+          "美国宪法",
+          "自由主义传统"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "白板",
+          "orig": "tabula rasa",
+          "brief": "心灵最初什么也没有。",
+          "detail": "「让我们假定心灵是一张白纸，上面没有一切字迹，没有任何观念。」所有观念最后都能追溯到两个来源：感觉（外）与反省（内）。他给孩子的论证很硬：如果观念是天生的，那婴儿就该知道「整体大于部分」，可他们没有。"
+        },
+        {
+          "title": "第一性质与第二性质",
+          "orig": "primary / secondary qualities",
+          "brief": "形状在物里，红色在眼睛里。",
+          "detail": "第一性质（大小、形状、运动、数目）是物体真实具有的，无论有没有人看；第二性质（颜色、声音、气味）只是物体借第一性质在我们心中产生观念的「能力」。这一步把颜色从世界里撤了出来——现代科学的世界图景由此定调。"
+        },
+        {
+          "title": "人格同一性",
+          "orig": "personal identity",
+          "brief": "「我」之所以是「我」，靠的是意识。",
+          "detail": "「人格同一性就在于意识的同一性。」他把同一性从「同一个身体」或「同一个灵魂实体」挪到了「意识的连续性」上。那个著名的例子：如果王子的意识进入鞋匠的身体，那这个人是谁？他说是王子——因为追责与赏罚只跟意识走。"
+        },
+        {
+          "title": "天赋人权与契约",
+          "orig": "natural rights",
+          "brief": "政府是受托人，不是父君。",
+          "detail": "人在自然状态里就拥有生命、自由、财产的权利，政府只是为了更好地保护它们而设立的受托机构。一旦受托人违背委托，人民有权收回——这一条直接写进了美国《独立宣言》与法国《人权宣言》。"
+        },
+        {
+          "title": "反对天赋观念",
+          "orig": "no innate ideas",
+          "brief": "没有印在灵魂上的字。",
+          "detail": "如果某个观念是天赋的，它应当被所有人一致同意；可「上帝存在」这件事，有整个民族不知道，有哲学家公开否认。所以它不可能是天赋的。他不用怀疑论，只用经验事实来反驳——这正是经验论的方法。"
+        }
+      ],
+      "works": [
+        {
+          "title": "人类理解论",
+          "orig": "An Essay Concerning Human Understanding",
+          "year": "1690",
+          "gist": "四卷。经验论的奠基之作，也是现代认识论的问题清单。"
+        },
+        {
+          "title": "政府论两篇",
+          "orig": "Two Treatises of Government",
+          "year": "1690",
+          "gist": "上篇驳君权神授，下篇讲自然权利与契约。现代自由主义的源头文件。"
+        },
+        {
+          "title": "论宗教宽容",
+          "orig": "A Letter Concerning Toleration",
+          "year": "1689",
+          "gist": "国家管外在秩序，教会管灵魂得救——两者的权限不能混。"
+        },
+        {
+          "title": "教育漫话",
+          "orig": "Some Thoughts Concerning Education",
+          "year": "1693",
+          "gist": "「健康的精神寓于健康的身体」。他主张用习惯与榜样，而不是体罚。"
+        },
+        {
+          "title": "论降低利息与提高货币价值",
+          "orig": "—",
+          "year": "1691",
+          "gist": "经济学论文。他反对政府人为压低利率。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "让我们假定心灵是一张白纸，上面没有一切字迹，没有任何观念。它是怎样被装备起来的？",
+          "orig": "Let us then suppose the mind to be, as we say, white paper, void of all characters, without any ideas.",
+          "src": "《人类理解论》第二卷 第一章 §2",
+          "note": "紧接着的答案是「经验」——「我们的一切知识都建立在经验之上，而且最终都源于经验」。"
+        },
+        {
+          "cn": "凡在理智中的，没有不是先在感觉中的。",
+          "orig": "Nihil est in intellectu quod non prius fuerit in sensu.",
+          "src": "经院哲学成语，洛克据以立论",
+          "note": "莱布尼茨后来补了一句：「除了理智本身」。这一补，就是理性论与经验论的分界线。"
+        },
+        {
+          "cn": "第二性质……并不是物体本身的属性，而只是借物体的第一性质在我们心中产生各种感觉的能力。",
+          "orig": "…are in truth nothing in the objects themselves, but powers to produce various sensations in us.",
+          "src": "《人类理解论》第二卷 第八章",
+          "note": "这一步之后，「红色」就不再是世界里的东西了。"
+        },
+        {
+          "cn": "人人生而自由、平等、独立，任何人不得侵害他人的生命、健康、自由或财产。",
+          "orig": "Men being by nature all free, equal, and independent…",
+          "src": "《政府论下篇》§95",
+          "note": "下一句就是：除了同意之外，没有任何东西能把人置于他人的政治权力之下。"
+        }
+      ],
+      "questions": [
+        "如果颜色只在眼睛里，那两个人的「红」是同一个红吗？",
+        "意识断了（昏睡、失忆），那个人还是「我」吗？",
+        "他说政府是受托人。受托人赖着不走时，谁来执行解约？"
+      ],
+      "x": 63.8,
+      "y": 78,
+      "device2Desc": "同一块东西。换个观察者，颜色气味全变了，大小形状却没变。"
+    },
+    {
       "id": "hume",
       "name": "休谟",
       "en": "David Hume",
@@ -4029,8 +4917,8 @@
       "school": "经验论 · 怀疑论",
       "schoolEn": "Empiricism",
       "cluster": "early",
-      "x": 76,
-      "y": 72,
+      "x": 67.3,
+      "y": 29,
       "color": "#4fd1c5",
       "oneLine": "因果，不过是一种习惯。",
       "device": "hume-causation",
@@ -4194,8 +5082,8 @@
       "school": "德国古典 · 先验唯心论",
       "schoolEn": "Transcendental Idealism",
       "cluster": "early",
-      "x": 80,
-      "y": 38,
+      "x": 70.9,
+      "y": 55,
       "color": "#4fd1c5",
       "oneLine": "头顶的星空与心中的道德律。",
       "device": "kant-glasses",
@@ -4360,6 +5248,178 @@
       ]
     },
     {
+      "id": "hegel",
+      "name": "黑格尔",
+      "en": "G.W.F. Hegel",
+      "orig": "Georg Wilhelm Friedrich Hegel",
+      "years": "1770 — 1831",
+      "born": 1770,
+      "era": "近代",
+      "school": "德国古典哲学 · 绝对唯心论",
+      "schoolEn": "German Idealism",
+      "cluster": "german",
+      "color": "#4fd1c5",
+      "oneLine": "凡是合乎理性的东西都是现实的。",
+      "device": "hegel-dialectic",
+      "deviceTitle": "正 · 反 · 合",
+      "deviceDesc": "一个命题，逼出它的否定，再从两者之间长出一个更高的东西。点「推进」看第三步怎么来的。",
+      "deviceHint": "合题不是折中——它把前两步都保留下来，又都否掉了。所以他叫它「扬弃」。",
+      "device2": "hegel-master-slave",
+      "device2Title": "主奴辩证法",
+      "device2Hint": "「主人享受，奴隶劳动。」劳动改造世界，也改造了那个改造世界的人。",
+      "bio": [
+        {
+          "y": "1770",
+          "t": "生于斯图加特，父为税务局官员。中学成绩单上写着：「哲学尚未开窍，但古典语文极佳。」"
+        },
+        {
+          "y": "1788",
+          "t": "入图宾根神学院，与荷尔德林、谢林同住一室。三人一起为法国大革命种了一棵「自由树」。"
+        },
+        {
+          "y": "1793",
+          "t": "毕业后做家庭教师，先在伯尔尼，后在法兰克福。这六年他几乎不发表东西，写下的宗教手稿直到二十世纪才被发现。"
+        },
+        {
+          "y": "1801",
+          "t": "到耶拿，靠谢林的推荐取得授课资格。1805 年成为副教授，薪水微薄。"
+        },
+        {
+          "y": "1806",
+          "t": "10 月，耶拿战役。法军进城，拿破仑骑马经过——他后来在信里称拿破仑为「马背上的世界精神」。就在这几周，他写完《精神现象学》。"
+        },
+        {
+          "y": "1808",
+          "t": "任纽伦堡中学的校长，兼教哲学。他在中学讲稿里，把整套体系讲得比任何著作都清楚。"
+        },
+        {
+          "y": "1818",
+          "t": "受聘柏林大学，此后十三年是普鲁士哲学的中心。他的课常常挤满整个教室。"
+        },
+        {
+          "y": "1831",
+          "t": "霍乱流行，他染病去世，年六十一。《法哲学原理》出版才两年。"
+        }
+      ],
+      "positioning": {
+        "text": "康德留下的问题是：物自体不可知，那知识与自由之间那道沟怎么填。黑格尔的答案是：不填，把它变成过程——理性不是一套静态的形式，是一个自我展开的运动，每一步都靠它自己的矛盾往前走。这个「把矛盾当作动力」的想法，此后几乎所有大陆哲学都在用它，或者反它。",
+        "upstream": [
+          "康德",
+          "费希特",
+          "谢林",
+          "斯宾诺莎",
+          "古希腊辩证法"
+        ],
+        "downstream": [
+          "马克思",
+          "克尔凯郭尔（作为对手）",
+          "尼采",
+          "海德格尔",
+          "法兰克福学派",
+          "科耶夫"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "辩证法",
+          "orig": "Dialektik",
+          "brief": "矛盾不是错误，是发动机。",
+          "detail": "一个规定（正）一旦被说清楚，就暴露出它自身的界限，从而逼出它的反面（反）；两者在更高层面上被重新组织（合）。这个「合」又不是终点，它自己也会再分裂。所以他说的真理不是一条命题，是整个运动。「扬弃」（Aufheben）一词兼有「取消」「保存」「提升」三义。"
+        },
+        {
+          "title": "主奴辩证法",
+          "orig": "Herrschaft und Knechtschaft",
+          "brief": "谁被承认，谁才成为人。",
+          "detail": "两个自我意识相遇，都要求对方承认自己。一场生死斗争后，怕死的一方屈服为奴，赢的一方成为主人。但主人得到的承认来自奴隶——一个不被当作人的东西，所以这份承认是空的。而奴隶在劳动中把自身对象化到物上，反而在物里认出了自己。历史由此从奴隶这一边继续。"
+        },
+        {
+          "title": "绝对精神",
+          "orig": "absoluter Geist",
+          "brief": "不是神，是整体。",
+          "detail": "绝对者不是站在世界之外的第一因，而是那个通过历史、艺术、宗教、哲学不断认识自身的过程。所以他的《精神现象学》是一部「意识的教育小说」：从感性确定性一路走到绝对知识，走的每一步都是意识自己否定自己。"
+        },
+        {
+          "title": "理性的狡黠",
+          "original": "List der Vernunft",
+          "orig": "List der Vernunft",
+          "brief": "历史用个人的激情实现自己的目的。",
+          "detail": "「特殊的东西相互角逐……而普遍的理念就在这角逐中实现自己。」拿破仑想的是自己的荣耀，历史借他完成了民族国家的普及。这不是辩护——他在《历史哲学》里说得很清楚：这些人在事后往往被抛弃。"
+        },
+        {
+          "title": "密涅瓦的猫头鹰",
+          "orig": "Eule der Minerva",
+          "brief": "哲学总是来晚一步。",
+          "detail": "「密涅瓦的猫头鹰要等黄昏到来，才会起飞。」哲学不能教世界该怎么活，它只能在世界成形之后把它理解成思想。这句话既是他的自我定位，也是他晚年被指「为现存秩序背书」的把柄。"
+        }
+      ],
+      "works": [
+        {
+          "title": "精神现象学",
+          "orig": "Phänomenologie des Geistes",
+          "year": "1807",
+          "gist": "意识的成长史。二十世纪被反复重读，从马克思主义到存在主义都从这里取材。"
+        },
+        {
+          "title": "逻辑学",
+          "orig": "Wissenschaft der Logik",
+          "year": "1812 — 1816",
+          "gist": "不是讲思维的规则，是讲范畴如何自我展开。全书以「存在」开始，以「绝对理念」结束。"
+        },
+        {
+          "title": "法哲学原理",
+          "orig": "Grundlinien der Philosophie des Rechts",
+          "year": "1821",
+          "gist": "伦理、市民社会、国家。「凡是合理的都是现实的」这句序言被误读得最厉害。"
+        },
+        {
+          "title": "历史哲学讲演录",
+          "orig": "Vorlesungen über die Philosophie der Geschichte",
+          "year": "1837（遗稿）",
+          "gist": "「历史是自由意识的进展」。他的历史分期被后世用得最多，也被批得最狠。"
+        },
+        {
+          "title": "美学讲演录",
+          "orig": "Vorlesungen über die Ästhetik",
+          "year": "1835（遗稿）",
+          "gist": "艺术是绝对精神的感性形式。著名的「艺术终结论」出于此。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "凡是合乎理性的东西都是现实的；凡是现实的东西都是合乎理性的。",
+          "orig": "Was vernünftig ist, das ist wirklich; und was wirklich ist, das ist vernünftig.",
+          "src": "《法哲学原理》序",
+          "note": "「现实」（wirklich）在他那里不等于「现存」（existierend）——现存的东西可以是坏的、偶然的，因而不是现实的。"
+        },
+        {
+          "cn": "密涅瓦的猫头鹰要等黄昏到来，才会起飞。",
+          "orig": "Die Eule der Minerva beginnt erst mit der einbrechenden Dämmerung ihren Flug.",
+          "src": "《法哲学原理》序",
+          "note": "常被读作保守，也可以读作谦卑：思想永远追不上正在发生的事。"
+        },
+        {
+          "cn": "一切都取决于：把实体同时理解为主体。",
+          "orig": "Es kommt alles darauf an, das Wahre nicht als Substanz, sondern ebensosehr als Subjekt aufzufassen.",
+          "src": "《精神现象学》序",
+          "note": "这一句把斯宾诺莎的静态实体变成了一个自我展开的运动。"
+        },
+        {
+          "cn": "熟知并非真知。",
+          "orig": "Das Bekannte ist darum, weil es bekannt ist, noch nicht erkannt.",
+          "src": "《精神现象学》序",
+          "note": "他整部哲学的动力之一：把「谁都知道」的东西重新变成问题。"
+        }
+      ],
+      "questions": [
+        "如果每个立场最后都会被更高的东西扬弃，那「现在」还有什么分量？",
+        "主奴辩证法说奴隶通过劳动获得自我意识——那今天刷手机的人，在改造什么？",
+        "「现实的即合理的」——这句话能不能替任何已经发生的事辩护？"
+      ],
+      "x": 74.4,
+      "y": 74,
+      "device2Desc": "两个意识相互要求承认。选择谁屈服，看接下来谁真正成了主人。"
+    },
+    {
       "id": "schopenhauer",
       "name": "叔本华",
       "en": "Arthur Schopenhauer",
@@ -4370,8 +5430,8 @@
       "school": "意志主义 · 悲观主义",
       "schoolEn": "Voluntarism / Pessimism",
       "cluster": "modern",
-      "x": 85,
-      "y": 62,
+      "x": 77.9,
+      "y": 30,
       "color": "#4fd1c5",
       "oneLine": "人生在痛苦与无聊之间，像钟摆一样来回。",
       "device": "schopenhauer-pendulum",
@@ -4532,6 +5592,177 @@
       "device2Hint": "「一群豪猪在寒冷的冬天挤在一起取暖……」太近互刺，太远冻僵，最后停在一个刚好的距离上。他说，礼仪就是这么来的。"
     },
     {
+      "id": "marx",
+      "name": "马克思",
+      "en": "Karl Marx",
+      "orig": "Karl Marx",
+      "years": "1818 — 1883",
+      "born": 1818,
+      "era": "现代",
+      "school": "历史唯物主义 · 政治经济学批判",
+      "schoolEn": "Marxism",
+      "cluster": "modern",
+      "color": "#4fd1c5",
+      "oneLine": "哲学家们只是用不同的方式解释世界，问题在于改变世界。",
+      "device": "marx-alienation",
+      "deviceTitle": "异化",
+      "deviceDesc": "一件产品从你手里做出来，然后离开你，最后站到你的对面。拖动「分工与私有制」，看它走多远。",
+      "deviceHint": "「工人生产的财富越多，他自己越贫乏。」异化不是心情，是产品与生产者之间的关系。",
+      "device2": "marx-base",
+      "device2Title": "基础与上层",
+      "device2Hint": "「不是人们的意识决定人们的存在，相反，是人们的社会存在决定人们的意识。」",
+      "bio": [
+        {
+          "y": "1818",
+          "t": "生于普鲁士特里尔，父亲是律师，为躲避反犹法令由犹太教改宗新教。"
+        },
+        {
+          "y": "1836",
+          "t": "入柏林大学，读法律，却迷上黑格尔。他加入「博士俱乐部」，成了最年轻的成员。"
+        },
+        {
+          "y": "1841",
+          "t": "以论德谟克利特与伊壁鸠鲁自然哲学的差别获耶拿大学博士学位。因为政治立场，进不了大学。"
+        },
+        {
+          "y": "1842",
+          "t": "任《莱茵报》主编。一年后报纸被查封，他写道：我们退却，但不是投降。"
+        },
+        {
+          "y": "1844",
+          "t": "在巴黎写下《1844 年经济学哲学手稿》——论异化劳动。这批稿子直到 1932 年才出版，改变了二十世纪对马克思的理解。"
+        },
+        {
+          "y": "1848",
+          "t": "与恩格斯发表《共产党宣言》。同年革命席卷欧洲，次年全部失败。他流亡伦敦，一住三十四年。"
+        },
+        {
+          "y": "1867",
+          "t": "《资本论》第一卷出版。他每天在大英博物馆的阅览室工作十小时，靠恩格斯的接济生活。"
+        },
+        {
+          "y": "1883",
+          "t": "卒于伦敦，葬于海格特公墓。第二、三卷由恩格斯整理出版。"
+        }
+      ],
+      "positioning": {
+        "text": "他把黑格尔的辩证法从「精神」翻到「物质」这一边：推动历史的不是自我意识，是人们生产与交换的方式。这个翻转带来一套全新的提问——不问「观念对不对」，问「这个观念是谁的、在什么样的生产关系里产生的」。二十世纪有一半的人类按他的方案改造过社会，也有另一半用他的名字互相指控，因此读他时最难的是把文本与后果分开。",
+        "upstream": [
+          "黑格尔",
+          "费尔巴哈",
+          "亚当·斯密",
+          "李嘉图",
+          "圣西门"
+        ],
+        "downstream": [
+          "列宁",
+          "卢卡奇",
+          "葛兰西",
+          "法兰克福学派",
+          "阿尔都塞",
+          "分析马克思主义"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "异化劳动",
+          "orig": "entfremdete Arbeit",
+          "brief": "你造的东西，最后站到你对面。",
+          "detail": "四重异化：劳动产品不属于工人；劳动过程不属于工人（不是你想做，是你要活）；人的类本质被剥夺（创造变成谋生）；人与人相互异化。他写这段时才二十六岁，用的是黑格尔与费尔巴哈的语言，但描述的是工厂里的具体事实。"
+        },
+        {
+          "title": "历史唯物主义",
+          "orig": "historischer Materialismus",
+          "brief": "不是观念推动历史，是生产方式。",
+          "detail": "「不是人们的意识决定人们的存在，相反，是人们的社会存在决定人们的意识。」生产力（技术与人）与生产关系（谁占有、谁劳动）构成经济基础；法律、政治、宗教、艺术是上层建筑。二者会脱节——当生产关系妨碍生产力时，革命的时代就到了。"
+        },
+        {
+          "title": "意识形态",
+          "orig": "Ideologie",
+          "brief": "你不知道自己在为谁说话。",
+          "detail": "统治阶级的思想在每一个时代都是占统治地位的思想。这不是说他们在撒谎，而是说：一套看起来中立、普适的观念（自由、契约、效率），可能正好是为某种利益结构服务的。这一批判后来被曼海姆、福柯、布尔迪厄以不同方式继承。"
+        },
+        {
+          "title": "商品拜物教",
+          "orig": "Warenfetishismus",
+          "brief": "人和人的关系，伪装成物和物的关系。",
+          "detail": "「商品形式的奥秘不过在于：它把人们劳动的社会性质反映成劳动产品本身的物的性质。」于是价格看起来像物的天然属性，而不是社会关系的表现。他把这比作宗教：人自己造的神，反过来支配人。"
+        },
+        {
+          "title": "实践",
+          "orig": "Praxis",
+          "brief": "真理不是一个命题，是一次改造。",
+          "detail": "《关于费尔巴哈的提纲》第十一条最著名，但前面第十条更狠：「旧唯物主义立脚点是市民社会，新唯物主义的立脚点则是人类社会或社会化了的人类。」他不是在说「理论没用」，是在说理论的检验标准在实践里。"
+        }
+      ],
+      "works": [
+        {
+          "title": "1844 年经济学哲学手稿",
+          "orig": "Ökonomisch-philosophische Manuskripte",
+          "year": "1844（1932 出版）",
+          "gist": "异化劳动。二十世纪最重要的一次「重新发现马克思」。"
+        },
+        {
+          "title": "关于费尔巴哈的提纲",
+          "orig": "Thesen über Feuerbach",
+          "year": "1845（1888 出版）",
+          "gist": "十一条，不到千字。第十一条是全世界被引用最多的哲学句子之一。"
+        },
+        {
+          "title": "共产党宣言",
+          "orig": "Manifest der Kommunistischen Partei",
+          "year": "1848",
+          "gist": "与恩格斯合写。第一部分的历史分析至今仍是最锋利的现代性诊断之一。"
+        },
+        {
+          "title": "政治经济学批判",
+          "orig": "Zur Kritik der politischen Ökonomie",
+          "year": "1859",
+          "gist": "序言里有那段「社会存在决定社会意识」的经典表述。"
+        },
+        {
+          "title": "资本论",
+          "orig": "Das Kapital",
+          "year": "1867 / 1885 / 1894",
+          "gist": "剩余价值、商品拜物教、资本积累。第一卷生前出版，后两卷由恩格斯整理。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "哲学家们只是用不同的方式解释世界，问题在于改变世界。",
+          "orig": "Die Philosophen haben die Welt nur verschieden interpretiert; es kommt aber darauf an, sie zu verändern.",
+          "src": "《关于费尔巴哈的提纲》第十一条",
+          "note": "刻在他的墓碑上。常被读作轻视理论，其实整条提纲都在讲「实践是检验真理的标准」。"
+        },
+        {
+          "cn": "不是人们的意识决定人们的存在，相反，是人们的社会存在决定人们的意识。",
+          "orig": "Es ist nicht das Bewußtsein der Menschen, das ihr Sein, sondern umgekehrt ihr gesellschaftliches Sein, das ihr Bewußtsein bestimmt.",
+          "src": "《政治经济学批判》序言",
+          "note": "历史唯物主义最凝练的一句。它说的是「决定」的来源，不是否认意识的反作用。"
+        },
+        {
+          "cn": "工人生产的财富越多，他的产品的力量和数量越大，他就越贫穷。",
+          "orig": "Je mehr der Arbeiter produziert, desto weniger hat er zu konsumieren.",
+          "src": "《1844 年经济学哲学手稿》",
+          "note": "紧接着：「劳动者创造的商品越多，他自己越变成廉价的商品。」"
+        },
+        {
+          "cn": "一切固定的、僵化的关系……都被扫除了。",
+          "orig": "Alles Ständische und Stehende verdampft.",
+          "src": "《共产党宣言》",
+          "note": "这句常被当作革命的宣言读，但它首先是对资本主义的观察：它自己就在不断地摧毁一切固定之物。"
+        }
+      ],
+      "questions": [
+        "如果一个人真心喜欢自己现在的劳动，他还算被异化吗？",
+        "「社会存在决定意识」——那你现在相信的这套说法，是不是也可以被这样解释？",
+        "他把哲学从解释转向改造。改造失败的时候，用什么来检验？"
+      ],
+      "x": 81.4,
+      "y": 56,
+      "device2Desc": "拖动生产力。法律、宗教、艺术会跟着动——但总是慢一步。"
+    },
+    {
       "id": "nietzsche",
       "name": "尼采",
       "en": "Friedrich Nietzsche",
@@ -4542,8 +5773,8 @@
       "school": "生命哲学 · 意志主义",
       "schoolEn": "Lebensphilosophie",
       "cluster": "modern",
-      "x": 89,
-      "y": 28,
+      "x": 84.9,
+      "y": 75,
       "color": "#4fd1c5",
       "oneLine": "假如这一生必须原样重来无数次，你会怎样？",
       "device": "nietzsche-recurrence",
@@ -4717,8 +5948,8 @@
       "school": "现象学 · 存在论",
       "schoolEn": "Phenomenology",
       "cluster": "modern",
-      "x": 93,
-      "y": 50,
+      "x": 88.4,
+      "y": 31,
       "color": "#4fd1c5",
       "oneLine": "「存在」的意义，今天已被遗忘。",
       "device": "heidegger-tool",
@@ -4884,8 +6115,8 @@
       "school": "分析哲学 · 语言哲学",
       "schoolEn": "Analytic Philosophy",
       "cluster": "analytic",
-      "x": 96,
-      "y": 24,
+      "x": 92.0,
+      "y": 52,
       "color": "#4fd1c5",
       "oneLine": "对于不可说的，必须保持沉默。",
       "device": "wittgenstein-picture",
@@ -5047,6 +6278,175 @@
       "device2Desc": "五个「游戏」，五个特征。逐个检查每一列，你会发现没有一列是全勾的。"
     },
     {
+      "id": "sartre",
+      "name": "萨特",
+      "en": "Jean-Paul Sartre",
+      "orig": "Jean-Paul Sartre",
+      "years": "1905 — 1980",
+      "born": 1905,
+      "era": "现代",
+      "school": "存在主义 · 现象学本体论",
+      "schoolEn": "Existentialism",
+      "cluster": "modern",
+      "color": "#4fd1c5",
+      "oneLine": "存在先于本质。",
+      "device": "sartre-badfaith",
+      "deviceTitle": "自欺",
+      "deviceDesc": "一个人把自己「就是」他的职业。切换自欺与本真，看他的可能性怎么收缩、怎么打开。",
+      "deviceHint": "「侍者不能一出生就是侍者。」他说，那种「我就是这个」的笃定，是一种逃避。",
+      "device2": "sartre-gaze",
+      "device2Title": "凝视",
+      "device2Hint": "「他人即地狱。」这句话说的不是别人很坏，是别人的注视把我变成了一个对象。",
+      "bio": [
+        {
+          "y": "1905",
+          "t": "生于巴黎，父亲在他一岁时去世。他后来说：「父亲的死是我一生最大的幸事——它没有给我留下一个superego。」"
+        },
+        {
+          "y": "1924",
+          "t": "入巴黎高等师范学校。1929 年哲学教师资格会考第一名，波伏娃第二名；此后两人成为终身伴侣，但从未结婚。"
+        },
+        {
+          "y": "1933",
+          "t": "赴柏林，读胡塞尔与海德格尔。他把现象学带回法国，写成《自我的超越性》。"
+        },
+        {
+          "y": "1938",
+          "t": "《恶心》出版。一部小说写「存在」的黏稠与多余：栗树根、鹅卵石、咖啡馆里的手。"
+        },
+        {
+          "y": "1943",
+          "t": "《存在与虚无》出版。同年《苍蝇》上演。他在占领时期的巴黎写作、教书、演戏。"
+        },
+        {
+          "y": "1945",
+          "t": "在巴黎作《存在主义是一种人道主义》的演讲，会场挤到有人晕倒。存在主义由此成为一场社会运动。"
+        },
+        {
+          "y": "1964",
+          "t": "拒领诺贝尔文学奖，理由是「作家不该让自己被转变成一个机构」。"
+        },
+        {
+          "y": "1980",
+          "t": "卒于巴黎，五万人上街送葬。此前数年双目近乎失明，仍每天口述写作。"
+        }
+      ],
+      "positioning": {
+        "text": "他把「自由」从一种能力变成一种判决：人没有预先给定的本质，所以必须自己造；逃避这个责任，就是自欺。这套话在战后欧洲有巨大的解放力，也招来同样强烈的反感——结构主义者说他低估了语言与结构的束缚，基督徒说他取消了善恶。他与加缪的决裂，正是这两种立场的分裂。",
+        "upstream": [
+          "胡塞尔",
+          "海德格尔",
+          "黑格尔（通过科耶夫）",
+          "笛卡尔"
+        ],
+        "downstream": [
+          "波伏娃",
+          "梅洛-庞蒂",
+          "拉康（作为对手）",
+          "存在主义运动",
+          "后殖民理论（法农）"
+        ]
+      },
+      "ideas": [
+        {
+          "title": "存在先于本质",
+          "orig": "l'existence précède l'essence",
+          "brief": "先有这个人，才有「他是谁」。",
+          "detail": "一把裁纸刀，工匠先有概念再制造，所以本质在先。人相反：他先存在，然后才通过一系列选择造就自己。所以没有「人的本性」这回事——只有一个一个的人。这一句把整个古典人性论翻了过来。"
+        },
+        {
+          "title": "自由与责任",
+          "orig": "liberté",
+          "brief": "人被判定为自由的。",
+          "detail": "「人是被判定为自由的」——判定（condamné）这个词很重：你不能选择不自由，因为「不选择」也是一种选择。而且你要为自己的一切负责，也为「你把自己造成的样子」负责。他甚至说：选择自己，就是选择一种人。"
+        },
+        {
+          "title": "自欺",
+          "orig": "mauvaise foi",
+          "brief": "把自己当成一件东西。",
+          "detail": "那个著名的咖啡馆侍者：他的动作太标准、太像「一个侍者」了。萨特说，他在玩「当侍者」这个游戏，好让自己相信「我就是一个侍者」——这样就不用面对「我还可以不是」。自欺不是撒谎（撒谎者知道真相），而是把自己说服成一件有固定本质的物。"
+        },
+        {
+          "title": "为他存在与凝视",
+          "orig": "le regard",
+          "brief": "别人的眼睛把我变成对象。",
+          "detail": "我透过钥匙孔偷看，突然听见走廊有脚步声——那一刻我不再是「在看」的主体，我成了「被人看见的」对象：羞耻出现了。他人的凝视剥夺了我的可能性，把我固定成一个东西。「他人即地狱」说的就是这种凝固。"
+        },
+        {
+          "title": "介入",
+          "orig": "engagement",
+          "brief": "写作也是一种行动。",
+          "detail": "「作家是向自由的人说话的自由的人。」他反对「为艺术而艺术」：既然每个词都在揭示世界，那沉默也是一种立场。他晚年参与政治、上街卖报，都是这一条的实践——也因此招来「知识分子该不该站队」的长期争论。"
+        }
+      ],
+      "works": [
+        {
+          "title": "存在与虚无",
+          "orig": "L'Être et le Néant",
+          "year": "1943",
+          "gist": "七百多页。自在存在、自为存在、为他存在，自欺与自由。"
+        },
+        {
+          "title": "恶心",
+          "orig": "La Nausée",
+          "year": "1938",
+          "gist": "小说。存在物的「多余」被一个普通人突然看见。"
+        },
+        {
+          "title": "存在主义是一种人道主义",
+          "orig": "L'existentialisme est un humanisme",
+          "year": "1946",
+          "gist": "演讲整理稿。最清楚的入口，也最容易被误读。"
+        },
+        {
+          "title": "禁闭",
+          "orig": "Huis clos",
+          "year": "1944",
+          "gist": "三个鬼魂在一间密室里互相注视。「他人即地狱」出自此剧。"
+        },
+        {
+          "title": "辩证理性批判",
+          "orig": "Critique de la raison dialectique",
+          "year": "1960",
+          "gist": "试图把存在主义与马克思主义接起来。他自己也说这是一部失败的书。"
+        }
+      ],
+      "quotes": [
+        {
+          "cn": "存在先于本质。",
+          "orig": "l'existence précède l'essence.",
+          "src": "《存在主义是一种人道主义》",
+          "note": "他补充：这不等于为所欲为，恰恰相反，它把全部责任压回个人身上。"
+        },
+        {
+          "cn": "人是被判定为自由的。",
+          "orig": "l'homme est condamné à être libre.",
+          "src": "《存在与虚无》",
+          "note": "「判定」是因为他没有创造自己的自由，却被要求为它负责。"
+        },
+        {
+          "cn": "他人即地狱。",
+          "orig": "L'enfer, c'est les autres.",
+          "src": "《禁闭》",
+          "note": "在剧中，说这话的人刚刚意识到：他必须通过别人的眼光才能确认自己是什么。"
+        },
+        {
+          "cn": "人不过是他自己所造就的东西。",
+          "orig": "l'homme n'est rien d'autre que ce qu'il se fait.",
+          "src": "《存在主义是一种人道主义》",
+          "note": "紧接着那句常被略去的话：「这就是存在主义的第一原理。」"
+        }
+      ],
+      "questions": [
+        "如果「不选择」也是一种选择，那还有什么不算选择？",
+        "你说「我就是这样的人」时，是在陈述事实，还是在给自己找一个不用改的理由？",
+        "他人把我变成对象——那我认识自己时，用的又是谁的眼睛？"
+      ],
+      "x": 95.5,
+      "y": 76,
+      "device2Desc": "一个房间，你在里面做事。有人开始看你——你的可能性一个个冻住。"
+    },
+    {
       "id": "camus",
       "name": "加缪",
       "en": "Albert Camus",
@@ -5057,8 +6457,8 @@
       "school": "荒诞哲学",
       "schoolEn": "Absurdism",
       "cluster": "modern",
-      "x": 99,
-      "y": 72,
+      "x": 99.0,
+      "y": 32,
       "color": "#4fd1c5",
       "oneLine": "必须想象西西弗斯是幸福的。",
       "device": "camus-sisyphus",
