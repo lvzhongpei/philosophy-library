@@ -931,3 +931,10 @@ input[type="range"]::-moz-range-thumb {
   line-height: 1.9;
   color: var(--dim);
 }
+
+/* 装置内的分组按钮（慧能 · 风幡） */
+.btn.is-on {
+  color: var(--void);
+  background: var(--cyan);
+  border-color: var(--cyan);
+}

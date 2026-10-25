@@ -46,8 +46,9 @@
 
     var X0 = narrow ? 0.16 : 0.1;
     var X1 = narrow ? 0.84 : 0.9;
-    var Y0 = narrow ? 0.11 : 0.2;
-    var Y1 = narrow ? 0.88 : 0.78;
+    var many = ps.length > 12;
+    var Y0 = narrow ? 0.11 : many ? 0.15 : 0.2;
+    var Y1 = narrow ? 0.88 : many ? 0.85 : 0.78;
 
     function px(x) {
       var k = maxX === minX ? 0.5 : (x - minX) / (maxX - minX);
@@ -64,13 +65,13 @@
     if (narrow) {
       grid = {};
       var order = ps.slice().sort(function (a, b) { return a.x - b.x; });
-      var cols = order.length > 6 ? 3 : 2;
+      var cols = order.length > 12 ? 4 : order.length > 6 ? 3 : 2;
       var rows = Math.ceil(order.length / cols);
       order.forEach(function (p, i) {
         var c = i % cols;
         var r = Math.floor(i / cols);
         grid[p.id] = {
-          x: (cols === 3 ? 0.2 + c * 0.3 : 0.28 + c * 0.44) * cw,
+          x: (cols === 4 ? 0.14 + c * 0.24 : cols === 3 ? 0.2 + c * 0.3 : 0.28 + c * 0.44) * cw,
           y: (rows > 1 ? 0.12 + r * (0.76 / (rows - 1)) : 0.5) * ch
         };
       });
@@ -128,14 +129,17 @@
       });
       cx /= members.length || 1;
       cy /= members.length || 1;
-      var r = 0;
+      // 星团用包围盒椭圆，二十颗星时比正圆贴合得多
+      var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
       members.forEach(function (m) {
-        r = Math.max(r, Math.hypot(m.x - cx, m.y - cy));
+        minX = Math.min(minX, m.x); maxX = Math.max(maxX, m.x);
+        minY = Math.min(minY, m.y); maxY = Math.max(maxY, m.y);
       });
-      r = Math.max(narrow ? 52 : 58, Math.min(narrow ? 84 : 108, r + (narrow ? 30 : 40)));
+      var rx = Math.max(narrow ? 40 : 46, (maxX - minX) / 2 + (narrow ? 26 : 32));
+      var ry = Math.max(narrow ? 34 : 38, (maxY - minY) / 2 + (narrow ? 24 : 28));
 
 
-      return { d: c, cx: cx, cy: cy, r: r };
+      return { d: c, cx: cx, cy: cy, rx: rx, ry: ry };
     });
 
     // 连线
@@ -169,23 +173,23 @@
     ctx.clearRect(0, 0, W, H);
 
     // 星团轨道环（窄屏为网格布局，不画环）
-    if (W >= 720) clusters.forEach(function (c, ci) {
+    if (W >= 720 && nodes.length <= 14) clusters.forEach(function (c, ci) {
       var breathe = reduced ? 0 : Math.sin(t * 0.35 + ci * 2.1) * 4;
       ctx.save();
       ctx.translate(c.cx, c.cy);
-      ctx.rotate(reduced ? 0 : t * 0.016 * (ci % 2 ? -1 : 1));
+      ctx.rotate(0);
 
       ctx.beginPath();
-      ctx.ellipse(0, 0, c.r + breathe, (c.r + breathe) * 0.5, 0, 0, Math.PI * 2);
+      ctx.ellipse(0, 0, c.rx + breathe, c.ry + breathe, 0, 0, Math.PI * 2);
       ctx.setLineDash([2, 7]);
       ctx.lineWidth = 1;
-      ctx.strokeStyle = "rgba(150,170,210,0.17)";
+      ctx.strokeStyle = "rgba(150,170,210," + (nodes.length > 14 ? 0.12 : 0.17) + ")";
       ctx.stroke();
 
       ctx.beginPath();
-      ctx.ellipse(0, 0, c.r * 0.6 + breathe, c.r * 0.3 + breathe * 0.5, 0, 0, Math.PI * 2);
+      ctx.ellipse(0, 0, c.rx * 0.62 + breathe, c.ry * 0.62 + breathe, 0, 0, Math.PI * 2);
       ctx.setLineDash([1, 11]);
-      ctx.strokeStyle = "rgba(150,170,210,0.1)";
+      ctx.strokeStyle = "rgba(150,170,210,0.08)";
       ctx.stroke();
       ctx.setLineDash([]);
       ctx.restore();

@@ -45,18 +45,35 @@
 
 .chips {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 7px;
   flex: 1 1 auto;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chips::-webkit-scrollbar {
+  height: 4px;
+}
+
+.chips::-webkit-scrollbar-thumb {
+  background: rgba(150, 170, 210, 0.22);
+  border-radius: 4px;
+}
+
+.chips::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .chip-btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 5px 11px;
+  padding: 4px 9px;
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   color: var(--faint);
   border: 1px solid var(--hair);

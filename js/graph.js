@@ -9,21 +9,34 @@
 
   // 冷色＝西方，暖色＝中国，同一传统内再分色相
   var COLORS = {
+    // 中国
     laozi: "#e0a458",
     confucius: "#d9b25c",
     zhuangzi: "#c98a4f",
+    mengzi: "#e8b96a",
+    xunzi: "#bf8f52",
+    huineng: "#d4a05e",
     wangyangming: "#e6c072",
+    // 西方
     socrates: "#4fd1c5",
     plato: "#46b8c9",
     aristotle: "#6fcfd6",
+    augustine: "#7fa8d8",
+    aquinas: "#9b8fe0",
     descartes: "#8fa8e0",
+    spinoza: "#a48fd8",
+    hume: "#7f9ec4",
     kant: "#b48ee0",
     schopenhauer: "#8f7fd8",
     nietzsche: "#e07a9a",
-    camus: "#c98fb0"
+    heidegger: "#c98fb0",
+    camus: "#b98ba8"
   };
 
-  var EAST = { laozi: 1, confucius: 1, zhuangzi: 1, wangyangming: 1 };
+  var EAST = {
+    laozi: 1, confucius: 1, zhuangzi: 1,
+    mengzi: 1, xunzi: 1, huineng: 1, wangyangming: 1
+  };
 
   var wrapEl = document.querySelector(".canvas-wrap");
   var cv = document.getElementById("graphCanvas");
@@ -321,6 +334,8 @@
       // 窄屏只显示主干节点，避免文字挤成一团
       var must = state.sel === q || state.hover === q || (fs && fs[q]);
       if (!must && !showAll && m.deg < 4) continue;
+      // 节点很多时只标主干，否则文字糊成一团
+      if (!must && nodes.length > 80 && m.deg < 3) continue;
       var alpha = must ? 0.95 : foc ? (dense ? 0.62 : 0.86) : 0.22;
       ctx.save();
       ctx.shadowColor = "rgba(4,6,11,0.95)";
