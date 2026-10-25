@@ -109,7 +109,7 @@
 #graphCanvas {
   display: block;
   width: 100%;
-  height: clamp(440px, 62vh, 660px);
+  height: clamp(480px, 68vh, 760px);
   touch-action: none;
   cursor: grab;
 }
@@ -278,6 +278,10 @@
   font-size: 8.5px;
   letter-spacing: 0.1em;
   color: var(--faint);
+  max-width: 118px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .gp-leg-count {

@@ -74,8 +74,9 @@
     document.title = p.name + " · 哲学图书馆";
 
     /* ---------------- 头部 ---------------- */
+    var pad2 = function (n) { return n < 10 ? "0" + n : "" + n; };
     $("heroMeta").innerHTML =
-      "<span>0" + (idx + 1) + " / 06</span>" +
+      "<span>" + pad2(idx + 1) + " / " + pad2(list.length) + "</span>" +
       '<span class="dot"></span><span>' + p.era + "</span>" +
       '<span class="dot"></span><span>' + p.years + "</span>" +
       '<span class="dot"></span><span style="color:' + p.color + '">' + p.school + "</span>";
@@ -160,7 +161,12 @@
         );
       })
       .join("");
-    art.appendChild(section("works", '<ul class="works">' + works + "</ul>"));
+    var worksNote = p.worksNote
+      ? '<p class="works-note">' + p.worksNote + "</p>"
+      : "";
+    art.appendChild(
+      section("works", worksNote + '<ul class="works">' + works + "</ul>")
+    );
 
     // 05 装置（两个）
     function panel(i, title, desc, hint) {

@@ -59,14 +59,37 @@
       return (Y0 + k * (Y1 - Y0)) * ch;
     }
 
+    // 窄屏：按年代排成三列网格，避免十二颗星挤成一条线
+    var grid = null;
+    if (narrow) {
+      grid = {};
+      var order = ps.slice().sort(function (a, b) { return a.x - b.x; });
+      var cols = order.length > 6 ? 3 : 2;
+      var rows = Math.ceil(order.length / cols);
+      order.forEach(function (p, i) {
+        var c = i % cols;
+        var r = Math.floor(i / cols);
+        grid[p.id] = {
+          x: (cols === 3 ? 0.2 + c * 0.3 : 0.28 + c * 0.44) * cw,
+          y: (rows > 1 ? 0.12 + r * (0.76 / (rows - 1)) : 0.5) * ch
+        };
+      });
+    }
+
+    function nodePos(p) {
+      if (grid) return grid[p.id];
+      return { x: px(p.x), y: py(p.y) };
+    }
+
     labels.innerHTML = "";
 
     nodes = ps.map(function (p) {
       var el = document.createElement("a");
       el.className = "node";
       el.href = "philosopher.html?id=" + p.id;
-      el.style.left = (px(p.x) / cw) * 100 + "%";
-      el.style.top = (py(p.y) / ch) * 100 + "%";
+      var np = nodePos(p);
+      el.style.left = (np.x / cw) * 100 + "%";
+      el.style.top = (np.y / ch) * 100 + "%";
       el.style.setProperty("--nc", p.color);
       el.setAttribute("aria-label", p.name + "，" + p.years + "，进入");
 
@@ -86,8 +109,8 @@
       return {
         d: p,
         el: el,
-        x: px(p.x),
-        y: py(p.y),
+        x: np.x,
+        y: np.y,
         dim: false
       };
     });
@@ -109,16 +132,8 @@
       members.forEach(function (m) {
         r = Math.max(r, Math.hypot(m.x - cx, m.y - cy));
       });
-      r = Math.max(narrow ? 74 : 92, Math.min(narrow ? 120 : 190, r + (narrow ? 44 : 66)));
+      r = Math.max(narrow ? 52 : 58, Math.min(narrow ? 84 : 108, r + (narrow ? 30 : 40)));
 
-      // 星团标注落在环的上方（避让左上角标题区）
-      var tag = document.createElement("div");
-      tag.className = "cluster-tag";
-      tag.style.left = (cx / cw) * 100 + "%";
-      tag.style.top = (Math.max(narrow ? 8 : 158, cy - r) / ch) * 100 + "%";
-      tag.innerHTML =
-        '<span class="ct-cn">' + c.name + "</span>" + c.en + "<br>" + c.span;
-      labels.appendChild(tag);
 
       return { d: c, cx: cx, cy: cy, r: r };
     });
@@ -129,15 +144,6 @@
         var a = nodes.filter(function (n) { return n.d.id === l.a; })[0];
         var b = nodes.filter(function (n) { return n.d.id === l.b; })[0];
         if (!a || !b) return null;
-
-        if (!narrow) {
-          var tag = document.createElement("div");
-          tag.className = "cluster-tag link-tag";
-          tag.style.left = ((a.x + b.x) / 2 / cw) * 100 + "%";
-          tag.style.top = ((a.y + b.y) / 2 / ch) * 100 + "%";
-          tag.textContent = l.label;
-          labels.appendChild(tag);
-        }
 
         return { a: a, b: b, style: l.style || "solid" };
       })
@@ -162,8 +168,8 @@
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
 
-    // 星团轨道环
-    clusters.forEach(function (c, ci) {
+    // 星团轨道环（窄屏为网格布局，不画环）
+    if (W >= 720) clusters.forEach(function (c, ci) {
       var breathe = reduced ? 0 : Math.sin(t * 0.35 + ci * 2.1) * 4;
       ctx.save();
       ctx.translate(c.cx, c.cy);
@@ -267,7 +273,8 @@
         ctx.stroke();
       }
 
-      label(ctx, "SECTOR 01 — 06 · AXIAL → MODERN", 44, sy - 12, {
+      var pad3 = function (n) { return (n < 10 ? "0" : "") + n; };
+      label(ctx, "SECTOR 01 — " + pad3(nodes.length) + " · PRE-QIN → MODERN", 44, sy - 12, {
         size: 9,
         spacing: 1.6,
         color: "rgba(150,170,210,0.35)"
@@ -275,11 +282,16 @@
       var dimN = nodes.filter(function (n) {
         return n.dim;
       }).length;
-      label(ctx, dimN ? "已滤除 " + dimN + " 位" : "六星俱全", W - 44, sy - 12, {
-        size: 9,
-        spacing: 1.6,
+      var rightTxt = dimN
+        ? "已滤除 " + dimN + " 位"
+        : clusters
+            .map(function (c) { return c.d.name; })
+            .join(" · ");
+      label(ctx, rightTxt, W - 44, sy - 12, {
+        size: 8.5,
+        spacing: 1.2,
         align: "right",
-        color: "rgba(150,170,210,0.35)"
+        color: "rgba(150,170,210,0.33)"
       });
     }
   }
@@ -356,7 +368,9 @@
       ).toLowerCase();
 
       a.innerHTML =
-        '<span class="card-idx">0' + (i + 1) + " / 06 · " + p.era + "</span>" +
+        '<span class="card-idx">' + (i < 9 ? "0" : "") + (i + 1) +
+        " / " + (data.philosophers.length < 10 ? "0" : "") + data.philosophers.length +
+        " · " + p.era + "</span>" +
         "<h2>" + p.name + "</h2>" +
         '<span class="c-orig">' + p.en.toUpperCase() + "</span>" +
         '<p class="c-line">' + p.oneLine + "</p>" +

@@ -207,8 +207,10 @@
   display: block;
   font-family: var(--serif);
   font-size: 11px;
-  letter-spacing: 0.28em;
-  color: var(--dim);
+  letter-spacing: 0.3em;
+  color: rgba(150, 170, 210, 0.55);
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(150, 170, 210, 0.16);
 }
 
 .cluster-tag.link-tag {

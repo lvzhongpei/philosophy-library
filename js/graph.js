@@ -7,14 +7,23 @@
   var K = window.CanvasKit;
   var TAU = Math.PI * 2;
 
+  // 冷色＝西方，暖色＝中国，同一传统内再分色相
   var COLORS = {
-    plato: "#4fd1c5",
-    zhuangzi: "#6ea8d8",
-    wangyangming: "#e0a458",
-    schopenhauer: "#b48ee0",
+    laozi: "#e0a458",
+    confucius: "#d9b25c",
+    zhuangzi: "#c98a4f",
+    wangyangming: "#e6c072",
+    socrates: "#4fd1c5",
+    plato: "#46b8c9",
+    aristotle: "#6fcfd6",
+    descartes: "#8fa8e0",
+    kant: "#b48ee0",
+    schopenhauer: "#8f7fd8",
     nietzsche: "#e07a9a",
-    camus: "#8fbf8a"
+    camus: "#c98fb0"
   };
+
+  var EAST = { laozi: 1, confucius: 1, zhuangzi: 1, wangyangming: 1 };
 
   var wrapEl = document.querySelector(".canvas-wrap");
   var cv = document.getElementById("graphCanvas");
@@ -93,6 +102,12 @@
   var REP = 2600;
   var SPRING = 0.013;
   var LEN = 96;
+
+  function tuneFor(n) {
+    var f = Math.max(0.6, n / 42);
+    REP = 2600 * f;
+    LEN = 96 * Math.sqrt(f);
+  }
   var CENTER = 0.0022;
   var DAMP = 0.87;
 
@@ -155,10 +170,10 @@
       }
       n.x += n.vx;
       n.y += n.vy;
-      if (n.x < 30) { n.x = 30; n.vx *= -0.4; }
-      if (n.x > W - 30) { n.x = W - 30; n.vx *= -0.4; }
+      if (n.x < 40) { n.x = 40; n.vx *= -0.4; }
+      if (n.x > W - 46) { n.x = W - 46; n.vx *= -0.4; }
       if (n.y < 26) { n.y = 26; n.vy *= -0.4; }
-      if (n.y > H - 26) { n.y = H - 26; n.vy *= -0.4; }
+      if (n.y > H - 44) { n.y = H - 44; n.vy *= -0.4; }
     }
   }
 
@@ -237,7 +252,9 @@
     }
 
     // 标签
-    ctx.font = "9.5px ui-monospace, 'SF Mono', Menlo, monospace";
+    var dense = nodes.length > 50;
+    var fs2 = dense ? 8.5 : 9.5;
+    ctx.font = fs2 + "px ui-monospace, 'SF Mono', Menlo, monospace";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     var showAll = W >= 640;
@@ -247,8 +264,9 @@
       var foc = !fs || fs[q];
       if (dim2) continue;
       // 窄屏只显示主干节点，避免文字挤成一团
-      if (!showAll && m.deg < 4 && state.sel !== q && state.hover !== q) continue;
-      var alpha = foc ? 0.86 : 0.3;
+      var must = state.sel === q || state.hover === q || (fs && fs[q]);
+      if (!must && !showAll && m.deg < 4) continue;
+      var alpha = must ? 0.95 : foc ? (dense ? 0.62 : 0.86) : 0.22;
       ctx.save();
       ctx.shadowColor = "rgba(4,6,11,0.95)";
       ctx.shadowBlur = 6;
@@ -474,7 +492,7 @@
           edges.push({
             a: i,
             b: j,
-            cross: data.concepts[i].phi !== data.concepts[j].phi
+            cross: !!EAST[data.concepts[i].phi] !== !!EAST[data.concepts[j].phi]
           });
         });
       });
@@ -498,6 +516,7 @@
           nodes.length + " 个概念、" + edges.length + " 条连线（其中 " + cross + " 条跨传统）";
       }
 
+      tuneFor(nodes.length);
       buildChips();
       defaultPanel();
       resize(false);
